@@ -1,0 +1,89 @@
+{
+  "_from": "jquery.mb.vimeo_player",
+  "_id": "jquery.mb.vimeo_player@1.1.8",
+  "_inBundle": false,
+  "_integrity": "sha1-22lk2yEFJwwbrpWC6eqpTi8l+rI=",
+  "_location": "/jquery.mb.vimeo_player",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "jquery.mb.vimeo_player",
+    "name": "jquery.mb.vimeo_player",
+    "escapedName": "jquery.mb.vimeo_player",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery.mb.vimeo_player/-/jquery.mb.vimeo_player-1.1.8.tgz",
+  "_shasum": "db6964db2105270c1bae9582e9eaa94e2f25fab2",
+  "_spec": "jquery.mb.vimeo_player",
+  "_where": "/Users/leventekosa/Projects/spyre/html",
+  "author": {
+    "name": "Pupunzi",
+    "email": "matteo@open-lab.com",
+    "url": "Matteo Bicocchi"
+  },
+  "bugs": {
+    "url": "https://github.com/pupunzi/jquery.mb.vimeop_layer/issues"
+  },
+  "buildnum": "543",
+  "bundleDependencies": false,
+  "demo": "http://pupunzi.com/#mb.components/mb.YTPlayer/vimeo_player.html",
+  "dependencies": {
+    "jquery": ">=1.8"
+  },
+  "deprecated": false,
+  "description": "This plugin let you play any public Vimeo video as background of your page. It can also be used as a customized player in page.",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-build-number": "^1.0.0",
+    "grunt-bump": "^0.3.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-include-replace": "^3.0.0",
+    "grunt-jsbeautifier": "^0.2.10",
+    "grunt-strip-code": "^1.0.6"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "docs": "https://github.com/pupunzi/jquery.mb.YTPlayer/wiki",
+  "download": "http://pupunzi.open-lab.com/mb-jquery-components/jquery-mb-vimeo_player/",
+  "homepage": "http://pupunzi.open-lab.com/mb-jquery-components/jquery-mb-vimeo_player/",
+  "keywords": [
+    "jquery-plugin",
+    "video",
+    "Vimeo",
+    "background",
+    "HTML5",
+    "player",
+    "custom"
+  ],
+  "license": "MIT",
+  "main": "dist/jquery.mb.vimeo_player.js",
+  "maintainers": [
+    {
+      "name": "Pupunzi",
+      "email": "matteo@open-lab.com",
+      "url": "Matteo Bicocchi"
+    }
+  ],
+  "name": "jquery.mb.vimeo_player",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pupunzi/jquery.mb.vimeo_player.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "title": "jquery.mb.vimeo_player",
+  "version": "1.1.8"
+}

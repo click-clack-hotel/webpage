@@ -1,0 +1,89 @@
+/*
+
+Theme: Spyre - Slick contemporary multipurpose theme
+Product Page: https://themes.getbootstrap.com/product/spyre-slick-contemporary-multipurpose-theme
+Author: Webinning
+Author URI: https://webinning.co.uk
+  7566000 janet pineda 
+---
+
+Copyright 2018 Webinning
+
+*/
+
+
+// Core
+@import "bootstrap/functions";
+
+// Variables
+@import "custom/variables";
+@import "spyre/variables";
+@import "bootstrap/variables";
+
+// Mixins
+@import "bootstrap/mixins";
+@import "spyre/mixins";
+
+// Bootstrap components
+@import "bootstrap/alert";
+@import "bootstrap/badge";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/button-group";
+@import "bootstrap/buttons";
+@import "bootstrap/card";
+@import "bootstrap/carousel";
+@import "bootstrap/close";
+@import "bootstrap/code";
+@import "bootstrap/custom-forms";
+@import "bootstrap/dropdown";
+@import "bootstrap/forms";
+@import "bootstrap/grid";
+@import "bootstrap/images";
+@import "bootstrap/input-group";
+@import "bootstrap/jumbotron";
+@import "bootstrap/list-group";
+@import "bootstrap/media";
+@import "bootstrap/modal";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/pagination";
+@import "bootstrap/popover";
+@import "bootstrap/print";
+@import "bootstrap/progress";
+@import "bootstrap/reboot";
+@import "bootstrap/root";
+@import "bootstrap/tables";
+@import "bootstrap/tooltip";
+@import "bootstrap/transitions";
+@import "bootstrap/type";
+@import "bootstrap/utilities";
+
+// Spyre components
+@import "spyre/background";
+@import "spyre/background-text";
+@import "spyre/buttons";
+@import "spyre/footer";
+@import "spyre/forms";
+@import "spyre/icons";
+@import "spyre/links";
+@import "spyre/move";
+@import "spyre/navbar";
+@import "spyre/preloader";
+@import "spyre/reboot";
+@import "spyre/root";
+@import "spyre/section";
+@import "spyre/shapes";
+@import "spyre/type";
+@import "spyre/utilities";
+@import "spyre/video";
+
+// Vendor
+@import "vendor/aos";
+@import "vendor/material-icons";
+@import "vendor/prism";
+@import "vendor/carousel";
+@import "vendor/fancybox";
+@import "vendor/rellax";
+
+// Custom styles
+@import "custom/styles";

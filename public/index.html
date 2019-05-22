@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <style media="screen">
+        .zoom {
+          transition: transform .3s;
+        }
+        .zoom:hover {
+          -ms-transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          transform: scale(1.05);
+          background: rgba(0, 0, 0, .6);
+        }
+        </style>
+        <!-- Page Title -->
+        <title>Click Clack Hotel</title>
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1553641315663_favicon.png?alt=media&token=ee05ece6-7242-44cc-8d76-f223a95c3d65" type="image/x-icon">
+
+        <!-- Vendor Stylesheets -->
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+        <link href="./assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="./assets/vendor/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="./assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
+        <link href="./assets/vendor/aos/dist/aos.css" rel="stylesheet">
+        <link href="./assets/vendor/jquery.mb.vimeo_player/dist/css/jquery.mb.vimeo_player.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <!-- Theme Stylesheets -->
+        <link href="./dist/css/theme.min.css" rel="stylesheet">
+
+        <!-- Vendor Stylesheets -->
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="./controllers/landingController.js"></script>
+    </head>
+
+    <body class="bg-dark">
+      <div ng-app="App" ng-controller="landingController">
+        <!-- Preloader -->
+        <div class="preloader">
+          <div class="cardcontainer">
+            <div class="spinner">
+                <img src="./assets/img/kk.png"  width="150" />
+            </div>
+          </div>
+        </div>
+        <!-- End of Preloader -->
+        <header >
+          <div class="navbar bg-primary align-items-center fixed-top">
+            <span class="align-items-center text-center navbar-text flex-fill  text-400 text-uppercase">
+              <a>
+                <img src="./assets/img/logo-light.png" width="120" />
+              </a>
+            </span>
+          </div>
+        </header>
+        <main class="main minh-100vh">
+            <section class="py-0 overflow-hidden text-center">
+              <div class="d-none d-lg-block">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div ng-if="img_bogota" class="bg-container overlay overlay-dark-40 parallax py-4" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_bogota}})'}"></div>
+                    <div class="container">
+                        <div class="row h-100vh align-items-center">
+                            <div class="col">
+                              <br><br><br><br><br><br><br><br><br><br>
+                              <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="bog-home.html"> BOGOTÁ</a>
+                              <br><br><br><br><br><br>
+                              <div class="owl-carousel" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
+                                  <div class="row justify-content-center">
+                                      <div class="col-lg-6">
+                                          <blockquote class="blockquote" data-aos="zoom-out-up">
+                                              <p class="text-white text-right" style="font-size:small">{{citas_bogota[0].cita}}</p>
+                                              <footer class="blockquote-footer text-right">{{citas_bogota[0].autor}}</footer>
+                                          </blockquote>
+                                      </div>
+                                  </div>
+                                  <div class="row justify-content-center">
+                                      <div class="col-lg-6">
+                                          <blockquote class="blockquote">
+                                              <p class="text-white text-right" style="font-size:small">{{citas_bogota[1].cita}}</p>
+                                              <footer class="blockquote-footer text-right">{{citas_bogota[1].autor}}</footer>
+                                          </blockquote>
+                                      </div>
+                                  </div>
+                                  <div class="row justify-content-center">
+                                      <div class="col-lg-6">
+                                          <blockquote class="blockquote">
+                                              <p class="text-white text-right" style="font-size:small">{{citas_bogota[2].cita}}</p>
+                                              <footer class="blockquote-footer text-right">{{citas_bogota[2].autor}}</footer>
+                                          </blockquote>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div ng-if="img_medellin" class="bg-container overlay overlay-dark-40 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_medellin}})'}"></div>
+                    <div class="container">
+                        <div class="row h-100vh align-items-center">
+                          <div class="col">
+                            <br><br><br><br><br><br><br><br><br>
+                            <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-home.html">MEDELLÍN</a>
+                            <br><br><br><br><br><br><br>
+                            <h4 class="mb-0 fs-2 fs-lg-2 fw-medium text-uppercase text-white">opening soon</h4>
+                            <div class="d-flex justify-content-center text-secondary" data-countdown="2019/05/24" data-countdown-template='
+                                &lt;h4 class="mx-4 fs-1 fs-lg-1 fw-medium"&gt;%D&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; days&lt;/span&gt;&lt;/h4&gt;
+                                &lt;h4 class="mx-4 fs-1 fs-lg-1 fw-medium"&gt;%H&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; hours&lt;/span&gt;&lt;/h4&gt;
+                                &lt;h4 class="mx-4 fs-1 fs-lg-1 fw-medium"&gt;%M&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; minutes&lt;/span&gt;&lt;/h4&gt;
+                                &lt;h4 class="d-none d-lg-block mx-4 fs-1 fs-lg-1 fw-medium"&gt;%S&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; seconds&lt;/span&gt;&lt;/h4&gt;
+                            '></div>
+                            <!--<div class="owl-carousel" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6">
+                                        <blockquote class="blockquote" data-aos="zoom-out-up">
+                                            <p class="text-white text-right" style="font-size:small">{{citas_medellin[0].cita}}</p>
+                                            <footer class="blockquote-footer text-right">{{citas_medellin[0].autor}}</footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6">
+                                        <blockquote class="blockquote">
+                                            <p class="text-white text-right" style="font-size:small">{{citas_medellin[1].cita}}</p>
+                                            <footer class="blockquote-footer text-right">{{citas_medellin[1].autor}}</footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6">
+                                        <blockquote class="blockquote">
+                                            <p class="text-white text-right" style="font-size:small">{{citas_medellin[2].cita}}</p>
+                                            <footer class="blockquote-footer text-right">{{citas_medellin[2].autor}}</footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>-->
+                          </div>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-lg-none">
+                <br><br>
+                <div class="container-fluid px-0">
+                    <div class="row no-gutters  " >
+                      <a href="bog-home.html">
+                      <div class=" col-md-12 py-6 zoom">
+                        <div ng-if="img_bogota" class="bg-container overlay overlay-dark-60 parallax py-4" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_bogota}})'}"></div>
+                          <div class="row justify-content-center py-4 py-lg-3">
+                              <div class="col-md-9">
+                                <div class="row justify-content-center text-justify">
+                                  <div class="row">
+                                      <div class="col-md-12 text-center">
+                                        <br>
+                                          <a class="btn btn-sm btn-outline-light my-2 my-sm-2" href="bog-home.html">BOGOTÁ</a>
+                                          <!--<div class="owl-carousel container" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
+                                              <div class="row justify-content-center">
+                                                  <div class="col-lg-6">
+                                                      <blockquote class="blockquote" data-aos="zoom-out-up">
+                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_bogota[0].cita}}</p>
+                                                          <footer class="blockquote-footer text-right">{{citas_bogota[0].autor}}</footer>
+                                                      </blockquote>
+                                                  </div>
+                                              </div>
+                                              <div class="row justify-content-center">
+                                                  <div class="col-lg-6">
+                                                      <blockquote class="blockquote">
+                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_bogota[1].cita}}</p>
+                                                          <footer class="blockquote-footer text-right">{{citas_bogota[1].autor}}</footer>
+                                                      </blockquote>
+                                                  </div>
+                                              </div>
+                                              <div class="row justify-content-center">
+                                                  <div class="col-lg-6">
+                                                      <blockquote class="blockquote">
+                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_bogota[2].cita}}</p>
+                                                          <footer class="blockquote-footer text-right">{{citas_bogota[2].autor}}</footer>
+                                                      </blockquote>
+                                                  </div>
+                                              </div>
+                                          </div>-->
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    </a>
+                    <a href="med-home.html">
+                      <div class="col-md-12 py-6 zoom">
+                          <div  ng-if="img_medellin" class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_medellin}})'}"></div>
+                          <div class="row justify-content-center py-3 py-lg-3">
+                              <div class="col-md-9">
+                                <div class="row justify-content-center text-justify">
+                                  <div class="row">
+                                      <div class="col-md-12 text-center">
+                                        <br>
+                                          <a class="btn btn-sm btn-outline-light my-2 my-sm-2" href="med-home.html">MEDELLÍN</a>
+                                          <h6 class="mb-0 fs-1 fw-medium text-uppercase text-white">Opening soon</h6>
+                                          <div class="d-flex justify-content-center text-secondary" data-countdown="2019/05/24" data-countdown-template='
+                                              &lt;h4 class="mx-4 fs-1 fw-medium"&gt;%D&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; days&lt;/span&gt;&lt;/h4&gt;
+                                              &lt;h4 class="mx-4 fs-1  fw-medium"&gt;%H&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; hours&lt;/span&gt;&lt;/h4&gt;
+                                              &lt;h4 class="mx-4 fs-1  fw-medium"&gt;%M&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; minutes&lt;/span&gt;&lt;/h4&gt;
+                                              &lt;h4 class="d-none d-lg-block mx-4 fs-1 fs-lg-1 fw-medium"&gt;%S&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; seconds&lt;/span&gt;&lt;/h4&gt;
+                                          '></div>
+                                          <!--<div class="owl-carousel container" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
+                                              <div class="row justify-content-center">
+                                                  <div class="col-lg-6">
+                                                      <blockquote class="blockquote" data-aos="zoom-out-up">
+                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_medellin[0].cita}}</p>
+                                                          <footer class="blockquote-footer text-right">{{citas_medellin[0].autor}}</footer>
+                                                      </blockquote>
+                                                  </div>
+                                              </div>
+                                              <div class="row justify-content-center">
+                                                  <div class="col-lg-6">
+                                                      <blockquote class="blockquote">
+                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_medellin[1].cita}}</p>
+                                                          <footer class="blockquote-footer text-right">{{citas_medellin[1].autor}}</footer>
+                                                      </blockquote>
+                                                  </div>
+                                              </div>
+                                              <div class="row justify-content-center">
+                                                  <div class="col-lg-6">
+                                                      <blockquote class="blockquote">
+                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_medellin[2].cita}}</p>
+                                                          <footer class="blockquote-footer text-right">{{citas_medellin[2].autor}}</footer>
+                                                      </blockquote>
+                                                  </div>
+                                              </div>
+                                          </div>-->
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    </a>
+                    </div>
+                </div>
+              </div>
+            </section>
+        </main>
+        <!-- End of Main Content -->
+
+      </div>
+
+      <!-- Core Javascripts -->
+      <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+      <script src="./assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+      <script src="./assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+      <!-- Vendor Javascripts -->
+      <script src="./assets/vendor/rellax/rellax.min.js"></script>
+      <script src="./assets/vendor/typed.js/lib/typed.min.js"></script>
+      <script src="./assets/vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+      <script src="./assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+      <script src="./assets/vendor/aos/dist/aos.js"></script>
+      <script src="./assets/vendor/jquery.mb.vimeo_player/dist/jquery.mb.vimeo_player.min.js"></script>
+      <script src="../assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+
+
+      <!-- Theme Javascripts -->
+      <script src="../assets/js/theme.js"></script>
+      <!--<script src="./dist/js/theme.min.js"></script>-->
+
+      <script src="./assets/js/custom/jquery-3.2.1.min.js"></script>
+      <script src="./assets/js/custom/popper.min.js"></script>
+      <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+      <script src="./assets/js/custom/plugins.min.js"></script>
+      <script src="./assets/js/custom/custom.min.js"></script>
+
+    </body>
+</html>

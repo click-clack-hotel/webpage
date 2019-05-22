@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["https://us-central1-click-clack-5db9f.cloudfunctions.net"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
