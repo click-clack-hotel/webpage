@@ -102,7 +102,7 @@
             <div class="spyre-navbar navbar navbar-expand-lg bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
                 <div class="container pb-2">
                     <a class="navbar-brand mr-lg-5 mr-xl-6" href="index.html">
-                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="150" />
+                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="140" />
                     </a>
                     <span class="navbar-text flex-fill d-none d-lg-inline-block text-500 text-uppercase">
                       <br>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href={{synxis_med}}>BOOK NOW</a>
+                            <a class="btn btn-sm btn-secondary my-2 my-sm-0 " href={{synxis_med}}>BOOK NOW</a>
                           </div>
                         </div>
                         <div class="form-group">
@@ -163,9 +163,19 @@
                 <div class="spyre-navbar-overlay overlay-slide ">
                     <div class="container ">
                         <div class="row">
-                            <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
-                                <nav class="spyre-navbar-nav">
-                                  <ul class="spyre-nav">
+                            <div class="spyre-navbar-nav-container text-white " style="
+                            -webkit-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            -moz-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            background-color: rgb(10,10,10,0.9);
+                            padding-right: 8vw;
+                            padding-left: 60px;
+                            border-left-width: 0px;
+                            position: absolute;
+                            left: 0px;
+                            ">
+                                <nav class="spyre-navbar-nav open">
+                                  <ul class="spyre-nav" style="margin-top: 20px;">
                                       <li class="spyre-nav-item"><a href="med-home.html" class="spyre-nav-link">Home</a></li>
                                       <li class="spyre-nav-item"><a href="med-about.html" class="spyre-nav-link">About us</a></li>
                                       <li class="spyre-nav-item"><a href="med-rooms.html" class="active spyre-nav-link">Rooms</a></li>
@@ -201,7 +211,7 @@
                 <div class="container">
                     <div class="row h-100vh align-items-center">
                         <div class="col">
-                          <h1 class="text-white text-uppercase fs-4 fs-lg-6">L: Deluxe</h1>
+                          <h1 class="text-white text-uppercase fs-4 fs-lg-6">L: junior suite</h1>
                         </div>
                     </div>
                     <div class="move d-none d-lg-block">
@@ -235,12 +245,12 @@
                                   <div class="row container">
                                     <div class="col-12">
                                       <br><br>
-                                        <h2 class="mb-3 fw-medium text-secondary text-uppercase">L: Deluxe</h2>
+                                        <h2 class="mb-3 fw-medium text-secondary text-uppercase">L: junior suite</h2>
                                         <p class="mb-0 fs--1 text-white text-justify">{{text_l_room_med}}</p>
                                         <p class="mb-0 fs--1 text-500"><small>{{text_light_l_room_med}}</small></p>
                                         <br>
                                         <div class="text-center">
-                                          <!--<a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href={{synxis}}>BOOK</a>-->
+                                          <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href={{synxis_med}}>BOOK</a>
                                         </div>
                                     </div>
                                   </div>
@@ -366,7 +376,7 @@
                                     <div class="col-md-12 text-center">
 
 
-                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-room-xl.html"> XL: Junior Suite</a>
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-room-xl.html"> XL: Suite</a>
 
                                     </div>
                                 </div>
@@ -374,35 +384,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 py-0">
+                    <div class="col-md-6 py-0">
                         <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_xxl_room_medellin}})'}"></div>
                         <div class="row justify-content-center py-6 py-lg-8">
                             <div class="col-md-9">
                               <div class="row justify-content-center text-justify">
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-room-xxl.html">2XL: Luxury</a>
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-room-xxl.html">2XL: Deluxe</a>
                                     </div>
                                 </div>
                               </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 py-0">
+                    <div class="col-md-6 py-0">
                         <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_xxxl_room_medellin}})'}"></div>
                         <div class="row justify-content-center py-6 py-lg-8">
                             <div class="col-md-9">
                               <div class="row justify-content-center text-justify">
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-room-xxxl.html">3XL: Suite</a>
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-room-xxxl.html">3XL: Duplex</a>
                                     </div>
                                 </div>
                               </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 py-0">
+                    <!-- <div class="col-md-4 py-0">
                         <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_rockstar_room_medellin}})'}"></div>
                         <div class="row justify-content-center py-6 py-lg-8">
                             <div class="col-md-9">
@@ -415,7 +425,7 @@
                               </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                   </div>
               </div>
             </section>

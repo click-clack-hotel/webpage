@@ -105,7 +105,7 @@
             <div class="spyre-navbar navbar navbar-expand-lg bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
                 <div class="container pb-2">
                     <a class="navbar-brand mr-lg-5 mr-xl-6" href="index.html">
-                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="150" />
+                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="140" />
                     </a>
                     <span class="navbar-text flex-fill d-none d-lg-inline-block text-500 text-uppercase">
                       <br>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href={{synxis_med_es}}>RESERVAR</a>
+                            <a class="btn btn-sm btn-secondary my-2 my-sm-0 " href={{synxis_med_es}}>RESERVAR</a>
                           </div>
                         </div>
                         <div class="form-group">
@@ -166,9 +166,19 @@
                 <div class="spyre-navbar-overlay overlay-slide ">
                     <div class="container ">
                         <div class="row">
-                            <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
-                                <nav class="spyre-navbar-nav">
-                                  <ul class="spyre-nav">
+                            <div class="spyre-navbar-nav-container text-white " style="
+                            -webkit-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            -moz-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            background-color: rgb(10,10,10,0.9);
+                            padding-right: 8vw;
+                            padding-left: 60px;
+                            border-left-width: 0px;
+                            position: absolute;
+                            left: 0px;
+                            ">
+                                <nav class="spyre-navbar-nav open">
+                                  <ul class="spyre-nav" style="margin-top: 20px;">
                                       <li class="spyre-nav-item"><a href="med-inicio.html" class=" spyre-nav-link">Inicio</a></li>
                                       <li class="spyre-nav-item"><a href="med-nosotros.html" class=" spyre-nav-link">Nosotros</a></li>
                                       <li class="spyre-nav-item"><a href="med-habitaciones.html" class="active spyre-nav-link">Habitaciones</a></li>
@@ -213,7 +223,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="slides-navigation"><a class="prev" href="med-habitacion-rockstar.html"><i class="fas fa-chevron-left"></i></a><a class="next" href="med-habitacion-s.html"><i class="fas fa-chevron-right"></i></a></div>
+                <div class="slides-navigation"><a class="prev" href="med-habitacion-xxxl.html"><i class="fas fa-chevron-left"></i></a><a class="next" href="med-habitacion-s.html"><i class="fas fa-chevron-right"></i></a></div>
             </section>
             <!-- End of Section -->
             <!-- Section -->
@@ -244,7 +254,7 @@
                                         <p class="mb-0 fs--1 text-500"><small>{{text_light_xs_room_med_es}}</small></p>
                                         <br>
                                         <div class="text-center">
-                                          <!--<a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href="https://be.synxis.com/?adult=1&arrive=2019-01-01&chain=19511&child=0&currency=COP&depart=2019-01-02&hotel=70051&level=hotel&locale=en-US&rooms=1&sbe_ri=0&start=availresults">RESERVAR</a>-->
+                                            <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href={{synxis_med_es}}>RESERVAR</a>
                                         </div>
                                     </div>
                                   </div>
@@ -361,7 +371,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 py-0">
+                    <div class="col-md-6 py-0">
                         <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_xxl_room_medellin}})'}"></div>
                         <div class="row justify-content-center py-6 py-lg-8">
                             <div class="col-md-9">
@@ -375,7 +385,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 py-0">
+                    <div class="col-md-6 py-0">
                         <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_xxxl_room_medellin}})'}"></div>
                         <div class="row justify-content-center py-6 py-lg-8">
                             <div class="col-md-9">
@@ -389,7 +399,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 py-0">
+                    <!-- <div class="col-md-4 py-0">
                         <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_rockstar_room_medellin}})'}"></div>
                         <div class="row justify-content-center py-6 py-lg-8">
                             <div class="col-md-9">
@@ -402,7 +412,7 @@
                               </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                   </div>
               </div>
             </section>

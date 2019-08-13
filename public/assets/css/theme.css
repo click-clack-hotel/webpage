@@ -204,7 +204,6 @@
     background-color: transparent;
     background-clip: padding-box;
     border: 1px solid white;
-    border-radius: .1875rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     }
 
@@ -910,19 +909,19 @@
  .btn-secondary
  {
      color: #fff;
-     border-color: #F37D7B;
-     background-color: #F37D7B;
+     border-color: rgb(243, 125, 123, 0.8) !important;
+     background-color: rgb(243, 125, 123, 0.8) !important;
  }
  .btn-secondary:hover
  {
      color: #fff;
-     border-color: #d86563;
-     background-color: #d86563;
+     border-color: rgb(216, 101, 99, 0.8) !important;
+     background-color: rgb(216, 101, 99, 0.8) !important;
  }
  .btn-secondary:focus,
  .btn-secondary.focus
  {
-     box-shadow: 0 0 0 .2rem #ee4845;
+     box-shadow: 0 0 0 .2rem rgba(214, 91, 89, 0.8) !important;
  }
  .btn-secondary.disabled,
  .btn-secondary:disabled
@@ -943,7 +942,7 @@
  .btn-secondary:not(:disabled):not(.disabled).active:focus,
  .show > .btn-secondary.dropdown-toggle:focus
  {
-     box-shadow: 0 0 0 .2rem rgba(31, 39, 73, .5);
+     box-shadow: 0 0 0 .2rem rgba(214, 91, 89, 0.8);
  }
 
  .btn-success
@@ -15861,6 +15860,7 @@
  ul li a.active
  {
      text-decoration: underline;
+     color: rgb(200, 200, 200);
  }
 
  /* ==========================================================================
@@ -16115,9 +16115,18 @@ animation: zoominoutsinglefeatured 1s infinite ;
 
  /* Navbar nav
     ========================================================================== */
- .spyre-navbar-nav-container
- {
-     height: 100vh;
+ .spyre-navbar-nav-container{
+    height: 100vh !important;
+
+    -webkit-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95) ;
+    -moz-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95) ;
+    box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95) ;
+    background-color: rgb(10,10,10,0.9) ;
+    padding-right: 30px ;
+    padding-left: 62px ;
+    border-left-width: 0px ;
+    position: absolute ;
+    left: 0px ;
  }
 
  .spyre-navbar-nav
@@ -16208,8 +16217,7 @@ animation: zoominoutsinglefeatured 1s infinite ;
  .spyre-nav-link:hover
  {
      text-decoration: underline;
-
-     color: #ffffff;
+     color: rgb(255, 255, 255);
  }
  .spyre-nav-link:focus
  {
@@ -16243,7 +16251,7 @@ animation: zoominoutsinglefeatured 1s infinite ;
  .dropdown-menu-link
  {
      font-family: 'Roboto', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-     font-size: 1.25rem;
+     font-size: 1rem;
      font-weight: 300;
      line-height: 2.25rem;
      line-height: 1.4rem;
@@ -16254,7 +16262,7 @@ animation: zoominoutsinglefeatured 1s infinite ;
 
      transition: color .3s ease;
 
-     color: #F37D7B;
+     color: rgb(185, 185, 185);
  }
  .dropdown-menu-link:hover
  {
@@ -16294,12 +16302,12 @@ animation: zoominoutsinglefeatured 1s infinite ;
      }
      .spyre-nav-link
      {
-         font-size: 1.3rem;
-         line-height: 2.5rem;
+         font-size: 1rem;
+         line-height: 2rem;
      }
      .spyre-nav-link.dropdown-toggle::after
      {
-         font-size: 2.875rem;
+         font-size: 2rem;
      }
  }
 
@@ -16307,9 +16315,8 @@ animation: zoominoutsinglefeatured 1s infinite ;
     ========================================================================== */
     .rin
     {
-      background: rgba(70, 70, 70, .2);
-      filter: blur(10px);
-      -webkit-filter: blur(10px);
+      background: rgba(50, 50, 50, .2);
+
     }
  .spyre-navbar-overlay
  {
@@ -16324,7 +16331,7 @@ animation: zoominoutsinglefeatured 1s infinite ;
      width: 30%;
      height: 100%;
 
-     background: rgba(0, 0, 0, .85);
+     background: rgba(0, 0, 0, .5);
  }
  .spyre-navbar-overlay.open
  {

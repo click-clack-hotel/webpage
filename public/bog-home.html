@@ -20,7 +20,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
         <!-- Theme Stylesheets -->
-        <link href="./dist/css/theme.min.css" rel="stylesheet">
+        <!-- <link href="./dist/css/theme.min.css" rel="stylesheet"> -->
+        <link href="./assets/css/theme.css" rel="stylesheet">
 
         <!-- Vendor Stylesheets -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
@@ -47,7 +48,11 @@
 
         <!-- Header -->
         <header>
+            
           <div class="d-lg-none d-xl-none">
+              <div >
+                  <a target="_blank" href="https://api.whatsapp.com/send?phone=573204170006&text=Hello%20there,%20I%20was%20just%20wondering…" style="-webkit-box-shadow: 0px 0px 43px -24px rgba(0,0,0,0.95);-moz-box-shadow: 0px 0px 43px -24px rgba(0,0,0,0.95);box-shadow: 0px 0px 43px -24px rgba(0,0,0,0.95);position: fixed; z-index:100; bottom: 25px;right: 25px;padding-top: 7px;padding-bottom: 7px;padding-left: 12px;padding-right: 12px;" class="btn btn-secondary "><i class="fab fa-2x fa-whatsapp"></i></a>
+              </div>
             <div class="spyre-navbar navbar bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
                 <div class="container-fluid">
                   <div class="menu-toggle mx-">
@@ -61,27 +66,19 @@
                           <span></span>
                       </div>
                   </div>
-                  <span class="align-items-center text-center navbar-text flex-fill  text-500 text-uppercase">
-                    <a href="index.html">
-                      <img src="./assets/img/logo-light.png" width="120" />
-                    </a>
-
-                  </span>
-
+                  <a href="index.html"><img src="./assets/img/logo-light.png"  width="110"></a>
                   <div >
                     <a class="btn btn-sm btn-outline-light" href="bog-inicio.html">ES</a>
                   </div>
 
-                  <div >
-                      <a href="https://api.whatsapp.com/send?phone=573204170006&text=Hello%20there,%20I%20was%20just%20wondering…" style=" position: fixed; bottom: 25px; right: 25px; " class="btn  btn-secondary px-3 "><i class="fab fa-2x fa-whatsapp"></i></a>
-                  </div>
+                 
                 </div>
                 <div class="spyre-navbar-overlay overlay-slide  ">
                     <div class="container ">
                         <div class="row">
-                            <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
-                                <nav class="spyre-navbar-nav">
-                                  <ul class="spyre-nav">
+                            <div  class="spyre-navbar-nav-container col-lg-3 col-xl-3 text-white ext-l " style="background-color:rgb(10,10,10,0.9) ">
+                                <nav class="spyre-navbar-nav" >
+                                  <ul class="spyre-nav" >
                                       <li class="spyre-nav-item"><a href="bog-home.html" class="active spyre-nav-link">Home</a></li>
                                       <li class="spyre-nav-item"><a href="bog-about.html" class="spyre-nav-link">About us</a></li>
                                       <li class="spyre-nav-item"><a href="bog-rooms.html" class="spyre-nav-link">Rooms</a></li>
@@ -109,29 +106,30 @@
             <div class="spyre-navbar navbar navbar-expand-lg bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
                 <div class="container pb-2">
                     <a class="navbar-brand mr-lg-5 mr-xl-6" href="index.html">
-                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="150" />
+                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="140" />
                     </a>
                     <span class="navbar-text flex-fill d-none d-lg-inline-block text-500 text-uppercase">
                       <br>
                       <div class="row">
+                       
                         <div class="col-sm-1 col-md-2">
                           <div class="form-group">
-                            <input type="date" class="form-c" id="check-in" value={{today}} ng-model='in' ng-change="changeHandler()" placeholder="CHECK IN">
+                            <input type="date" class="form-c" id="check-in" value={{today}} ng-model='in' ng-change="changeHandler()" placeholder="mm/dd/yyyy" title="Check-in">
                           </div>
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <input type="date" class="form-c" id="check-out" value={{tomorrow}} ng-model='out' ng-change="changeHandler()" placeholder="CHECK OUT">
+                            <input type="date" class="form-c" id="check-out" value={{tomorrow}} ng-model='out' ng-change="changeHandler()" placeholder="mm/dd/yyyy"  title="Check-out">
                           </div>
                         </div>
                         <div class="col-md-2">
-                          <div class="form-group">
-                            <input type="number" min="1" class="form-c" id="guests" ng-model='guests' ng-change="changeHandler()" placeholder="GUESTS" >
+                            <div class="form-group">
+                              <input type="number" min="1" class="form-c" id="guests" ng-model='guests' ng-change="changeHandler()" placeholder="GUESTS" title="Number of guests" >
+                            </div>
                           </div>
-                        </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href={{synxis}}>BOOK NOW</a>
+                            <a class="btn btn-sm btn-secondary my-2 my-sm-0 " href={{synxis}}>BOOK NOW</a>
                           </div>
                         </div>
                         <div class="form-group">
@@ -139,7 +137,7 @@
                         </div>
                       </div>
                     </span>
-                    <div class="menu-toggle">
+                    <div class="menu-toggle" title="Menu">
                         <div class="hamburger my-2 my-sm-0 mx-0">
                             <span></span>
                             <span></span>
@@ -151,10 +149,10 @@
                         </div>
                     </div>
                     <div >
-                      <a class="btn btn-sm btn-outline-light my-2 my-sm-0 mx-3" href="bog-inicio.html">ES</a>
+                      <a class="btn btn-sm btn-outline-light my-2 my-sm-0 mx-3" href="bog-inicio.html" title="Español">ES</a>
                     </div>
                     <div >
-                      <a class="btn btn-sm btn-outline-light" href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+                      <a class="btn btn-sm btn-outline-light" href="index.html" title="Landing"><i class="fas fa-sign-out-alt"></i></a>
                     </div>
                     <div class="d-block d-sm-none d-none d-sm-block d-md-block d-lg-none">
                       <br>
@@ -164,15 +162,26 @@
                     </div>
 
                     <div >
-                        <a href="https://api.whatsapp.com/send?phone=573204170006&text=Hello%20there,%20I%20was%20just%20wondering…" style=" position: fixed; bottom: 25px; right: 25px; " class="btn  btn-secondary px-3 "><i class="fab fa-2x fa-whatsapp"></i></a>
+                        <a title="Get in touch!" target="_blank" href="https://api.whatsapp.com/send?phone=573204170006&text=Hello%20there,%20I%20was%20just%20wondering…" style=" position: fixed; bottom: 25px; right: 25px; " class="btn  btn-secondary px-3 "><i class="fab fa-2x fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="spyre-navbar-overlay overlay-slide">
                     <div class="container ">
                         <div class="row">
-                            <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
-                                <nav class="spyre-navbar-nav">
-                                  <ul class="spyre-nav">
+                          
+                            <div class="spyre-navbar-nav-container text-white " style="
+                            -webkit-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            -moz-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                            background-color: rgb(10,10,10,0.9);
+                            padding-right: 60px;
+                            padding-left: 60px;
+                            border-left-width: 0px;
+                            position: absolute;
+                            left: 0px;
+                            ">
+                                <nav class="spyre-navbar-nav open">
+                                  <ul class="spyre-nav" style="margin-top: 20px;">
                                       <li class="spyre-nav-item"><a href="bog-home.html" class="active spyre-nav-link">Home</a></li>
                                       <li class="spyre-nav-item"><a href="bog-about.html" class="spyre-nav-link">About us</a></li>
                                       <li class="spyre-nav-item"><a href="bog-rooms.html" class="spyre-nav-link">Rooms</a></li>
@@ -182,19 +191,17 @@
                                       <li class="spyre-nav-item"><a href="bog-rover.html" class="spyre-nav-link">What to do</a></li>
                                       <li class="spyre-nav-item dropdown">
                                           <a href="#" class="spyre-nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
-                                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: none;">
                                               <li class="dropdown-menu-item"><a href="bog-contact.html" class="dropdown-menu-link">Contact us</a></li>
                                               <li class="dropdown-menu-item"><a href="bog-talent.html" class="dropdown-menu-link">Work with us</a></li>
                                           </ul>
                                       </li>
-                                      <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terms</a></li>
+                                      <li class="spyre-nav-item"><a target="_blank" href="./assets/docs/terms-and-conditions.pdf" class="spyre-nav-link">Terms</a></li>
                                   </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div class="">
-
-                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -226,13 +233,16 @@
                           <div class="form-group">
                             <input type="number" min="1" class="form-c" ng-model='guests' ng-change="changeHandler()" id="guests" placeholder="GUESTS">
                           </div>-->
-                          <br><br><br><br><br><br><br><br><br><br>
-                          <div class="form-group">
-                            <a class="btn btn-sm btn-outline-secondary btn-block my-2 my-sm-0 " href={{synxis}}>BOOK NOW</a>
+                          <div style="margin-top: 50vh">
+                              <div class="form-group">
+                                  <a class="btn btn-sm btn-secondary btn-block my-2 my-sm-0 " href={{synxis}}>BOOK NOW</a>
+                                </div>
+                                <div class="form-group">
+                                  <a class="btn btn-sm btn-outline-light btn-block my-2 my-sm-0 " href="https://gc.synxis.com/rez.aspx?Hotel=70051&Chain=19511&template=RBE&shell=RBE&locale=es&start=searchres">MODIFY BOOKING</a>
+                                </div>
                           </div>
-                          <div class="form-group">
-                            <a class="btn btn-sm btn-outline-light btn-block my-2 my-sm-0 " href="https://gc.synxis.com/rez.aspx?Hotel=70051&Chain=19511&template=RBE&shell=RBE&locale=es&start=searchres">MODIFY BOOKING</a>
-                          </div>
+                 
+
                         </form>
                       </div>
                     </div>
@@ -243,7 +253,7 @@
 
                 </div>
                 <div class="move d-none d-lg-block">
-                  <a href="#section-2" data-smooth-scroll data-smooth-scroll-hash="false">
+                  <a title="See more!" href="#section-2" data-smooth-scroll data-smooth-scroll-hash="false">
                       <i class="zmdi zmdi-long-arrow-down zmdi-hc-4x text-white"></i>
                   </a>
 
@@ -276,7 +286,7 @@
               <div class="container ">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <a href="https://www.instagram.com/clickclackhotel"><h1 class="text-white"><i class="fab fa-instagram text-secondary"></i> @clickclackhotel</h1></a>
+                    <a title="Instagram" target="_blank" href="https://www.instagram.com/clickclackhotel"><h1 class="text-white"><i class="fab fa-instagram text-secondary"></i> @clickclackhotel</h1></a>
                   </div>
                 </div>
               </div>
@@ -328,9 +338,9 @@
                 <div class="d-flex justify-content-between align-items-center py-4">
                   <div class="pt-5 pt-lg-0 pb-4">
                       <p class="mb-4 mt-3 fs--1">Cra. 11 No. 93 - 77,  Bogotá
-                      <br><br><a href="#" class="text-white"><i class="zmdi zmdi-phone zmdi-hc-fw mr-1"></i>57 (1) 743 04 04</a>
-                      <br><a href="#" class="text-white"><i class="zmdi zmdi-phone zmdi-hc-fw mr-1"></i>01 8000 18 32 32</a>
-                      <br><a href="#" class="text-white"><i class="zmdi zmdi-email zmdi-hc-fw mr-1"></i>info@clickclackhotel.com</a></p>
+                      <br><br><a class="text-white"><i class="zmdi zmdi-phone zmdi-hc-fw mr-1"></i>57 (1) 743 04 04</a>
+                      <br><a class="text-white"><i class="zmdi zmdi-phone zmdi-hc-fw mr-1"></i>01 8000 18 32 32</a>
+                      <br><a class="text-white"><i class="zmdi zmdi-email zmdi-hc-fw mr-1"></i>info@clickclackhotel.com</a></p>
                   </div>
                   <div class="mt-4 text-left mt-lg-auto mb-5 mb-lg-">
                     <div class="row text-center">
@@ -356,7 +366,7 @@
               </div>
               <div class="text-center">
                 <p class="fs--2 text-center text-white">&copy; {{year}} Click Clack Hotel. All rights reserved.</p>
-                <a class=" fs--2 text-secondary" href={{terms}}>Terms and Conditions</a>
+                <a class=" fs--2 text-secondary" target="_blank" href={{terms}}>Terms and Conditions</a>
 
                 <br><br>
               </div>

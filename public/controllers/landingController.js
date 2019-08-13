@@ -7,6 +7,8 @@ app.controller('landingController', function($scope, $http) {
     $scope.data = response;
     return response;
   });
+  $scope.year = new Date().getFullYear()
+  $scope.terms = './assets/docs/terms-and-conditions.pdf'
   request.then(function (data) {
     $scope.citas_bogota = data.data[0]
     $scope.citas_medellin = data.data[1]

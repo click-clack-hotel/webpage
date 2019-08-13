@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
         <!-- Theme Stylesheets -->
-        <link href="./dist/css/theme.min.css" rel="stylesheet">
+        <link href="./assets/css/theme.css" rel="stylesheet">
 
         <!-- Vendor Stylesheets -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
@@ -78,10 +78,10 @@
                       <a href="https://api.whatsapp.com/send?phone=573204170006&text=Hello%20there,%20I%20was%20just%20wondering…" style=" position: fixed; bottom: 25px; right: 25px; " class="btn  btn-secondary px-3 "><i class="fab fa-2x fa-whatsapp"></i></a>
                   </div>
                 </div>
-                <div class="spyre-navbar-overlay overlay-slide menu-toggle ">
+                <div class="spyre-navbar-overlay overlay-slide">
                     <div class="container ">
                         <div class="row">
-                            <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
+                            <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l " style="background-color:rgb(10,10,10,0.9) ">
                                 <nav class="spyre-navbar-nav">
                                   <ul class="spyre-nav">
                                       <li class="spyre-nav-item"><a href="med-home.html" class="active spyre-nav-link">Home</a></li>
@@ -111,7 +111,7 @@
             <div class="spyre-navbar navbar navbar-expand-lg bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
                 <div class="container pb-2">
                     <a class="navbar-brand mr-lg-5 mr-xl-6" href="index.html">
-                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="150" />
+                      <img src="./assets/img/logo-light.png" class="d-none d-lg-block" alt="Spyre" width="140" />
                     </a>
                     <span class="navbar-text flex-fill d-none d-lg-inline-block text-500 text-uppercase">
                       <br>
@@ -133,7 +133,7 @@
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0 " href={{synxis_med}}>BOOK NOW</a>
+                            <a class="btn btn-sm btn-secondary my-2 my-sm-0 " href={{synxis_med}}>BOOK NOW</a>
                           </div>
                         </div>
                         <div class="form-group">
@@ -172,9 +172,19 @@
                 <div class="spyre-navbar-overlay overlay-slide ">
                     <div class="container ">
                         <div class="row">
-                            <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
-                                <nav class="spyre-navbar-nav">
-                                  <ul class="spyre-nav">
+                          <div class="spyre-navbar-nav-container text-white " style="
+                          -webkit-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                          -moz-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                          box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+                          background-color: rgb(10,10,10,0.9);
+                          padding-right: 8vw;
+                          padding-left: 60px;
+                          border-left-width: 0px;
+                          position: absolute;
+                          left: 0px;
+                          ">
+                              <nav class="spyre-navbar-nav open">
+                                <ul class="spyre-nav" style="margin-top: 20px;">
                                       <li class="spyre-nav-item"><a href="med-home.html" class="active spyre-nav-link">Home</a></li>
                                       <li class="spyre-nav-item"><a href="med-about.html" class="spyre-nav-link">About us</a></li>
                                       <li class="spyre-nav-item"><a href="med-rooms.html" class="spyre-nav-link">Rooms</a></li>
@@ -357,7 +367,7 @@
                   </div>
               </div>
               <div class="text-center">
-                <p class="fs--2 text-center text-white">&copy; {{year}} Click Clack Hotel. All rights reserved.</p>
+                <p class="fs--2 text-center text-white">&copy; 2019 Click Clack Hotel. All rights reserved.</p>
                 <a class=" fs--2 text-secondary" href={{terms}}>Terms and Conditions</a>
 
                 <br><br>

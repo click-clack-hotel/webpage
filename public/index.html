@@ -49,73 +49,66 @@
           </div>
         </div>
         <!-- End of Preloader -->
-        <header >
-          <div class="navbar bg-primary align-items-center fixed-top">
-            <span class="align-items-center text-center navbar-text flex-fill  text-400 text-uppercase">
-              <a>
-                <img src="./assets/img/logo-light.png" width="120" />
-              </a>
-            </span>
+        
+          <div class="navbar fixed-top" 
+          style="background-color: rgba(20, 20, 20, 0.95); 
+          height:60px !important;   
+          position: fixed;
+          top: 0;
+          width: 100%; 
+          -webkit-box-shadow: 0 4px 4px 0 #000, 0 0 2px 0 #000;
+          -moz-box-shadow: 0 4px 4px 0 #000, 0 0 2px 0 #000;
+          box-shadow: 0 4px 4px 0 #000, 0 0 2px 0 #000;"
+          >
+                <img style="margin: auto;" src="./assets/img/logo-light.png" width="110" />
           </div>
-        </header>
+          
         <main class="main minh-100vh">
             <section class="py-0 overflow-hidden text-center">
               <div class="d-none d-lg-block">
                 <div class="row">
                   <div class="col-sm-6 col-md-6">
-                    <div ng-if="img_bogota" class="bg-container overlay overlay-dark-40 parallax py-4" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_bogota}})'}"></div>
+                    <div ng-if="img_bogota" class="bg-container overlay overlay-dark-20 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_bogota}})'}"></div>
                     <div class="container">
                         <div class="row h-100vh align-items-center">
                             <div class="col">
-                              <br><br><br><br><br><br><br><br><br><br>
-                              <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="bog-home.html"> BOGOTÁ</a>
-                              <br><br><br><br><br><br>
-                              <div class="owl-carousel" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
-                                  <div class="row justify-content-center">
-                                      <div class="col-lg-6">
-                                          <blockquote class="blockquote" data-aos="zoom-out-up">
-                                              <p class="text-white text-right" style="font-size:small">{{citas_bogota[0].cita}}</p>
-                                              <footer class="blockquote-footer text-right">{{citas_bogota[0].autor}}</footer>
-                                          </blockquote>
-                                      </div>
-                                  </div>
-                                  <div class="row justify-content-center">
-                                      <div class="col-lg-6">
-                                          <blockquote class="blockquote">
-                                              <p class="text-white text-right" style="font-size:small">{{citas_bogota[1].cita}}</p>
-                                              <footer class="blockquote-footer text-right">{{citas_bogota[1].autor}}</footer>
-                                          </blockquote>
-                                      </div>
-                                  </div>
-                                  <div class="row justify-content-center">
-                                      <div class="col-lg-6">
-                                          <blockquote class="blockquote">
-                                              <p class="text-white text-right" style="font-size:small">{{citas_bogota[2].cita}}</p>
-                                              <footer class="blockquote-footer text-right">{{citas_bogota[2].autor}}</footer>
-                                          </blockquote>
-                                      </div>
-                                  </div>
-                              </div>
+                              <a class="btn btn-lg btn-outline-light my-2 my-sm-2"  style="position: relative; top: 10%;" href="bog-home.html"> BOGOTÁ</a>
                             </div>
                         </div>
-
+                        <div class="owl-carousel" style="position: absolute; top: 75%;" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <blockquote class="blockquote" data-aos="zoom-out-up">
+                                        <p style="text-shadow: 2px 2px 8px rgba(0, 0, 0); font-size:13px;" class="text-white text-right" style="font-size:small">{{citas_bogota[0].cita}}</p>
+                                        <footer style="text-shadow: 2px 2px 8px rgba(0, 0, 0); font-size:13px;"  class="blockquote-footer text-right">{{citas_bogota[0].autor}}</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <blockquote class="blockquote">
+                                        <p style="text-shadow: 2px 2px 8px rgba(0, 0, 0); font-size:13px;" class="text-white text-right" style="font-size:small">{{citas_bogota[1].cita}}</p>
+                                        <footer style="text-shadow: 2px 2px 8px rgba(0, 0, 0); font-size:13px;" class="blockquote-footer text-right">{{citas_bogota[1].autor}}</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <blockquote class="blockquote">
+                                        <p style="text-shadow: 2px 2px 8px rgba(0, 0, 0); font-size:13px;" class="text-white text-right" style="font-size:small">{{citas_bogota[2].cita}}</p>
+                                        <footer style="text-shadow: 2px 2px 8px rgba(0, 0, 0); font-size:13px;" class="blockquote-footer text-right">{{citas_bogota[2].autor}}</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                   </div>
                   <div class="col-sm-6 col-md-6">
-                    <div ng-if="img_medellin" class="bg-container overlay overlay-dark-40 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_medellin}})'}"></div>
+                    <div ng-if="img_medellin" class="bg-container overlay overlay-dark-10 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_medellin}})'}"></div>
                     <div class="container">
                         <div class="row h-100vh align-items-center">
                           <div class="col">
-                            <br><br><br><br><br><br><br><br><br>
-                            <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="med-home.html">MEDELLÍN</a>
-                            <br><br><br><br><br><br><br>
-                            <h4 class="mb-0 fs-2 fs-lg-2 fw-medium text-uppercase text-white">opening soon</h4>
-                            <div class="d-flex justify-content-center text-secondary" data-countdown="2019/05/24" data-countdown-template='
-                                &lt;h4 class="mx-4 fs-1 fs-lg-1 fw-medium"&gt;%D&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; days&lt;/span&gt;&lt;/h4&gt;
-                                &lt;h4 class="mx-4 fs-1 fs-lg-1 fw-medium"&gt;%H&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; hours&lt;/span&gt;&lt;/h4&gt;
-                                &lt;h4 class="mx-4 fs-1 fs-lg-1 fw-medium"&gt;%M&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; minutes&lt;/span&gt;&lt;/h4&gt;
-                                &lt;h4 class="d-none d-lg-block mx-4 fs-1 fs-lg-1 fw-medium"&gt;%S&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; seconds&lt;/span&gt;&lt;/h4&gt;
-                            '></div>
+                            <a class="btn btn-lg btn-outline-light my-2 my-sm-2" style="position: relative; top: 10%;" href="med-home.html">MEDELLÍN</a>
                             <!--<div class="owl-carousel" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6">
@@ -155,7 +148,7 @@
                     <div class="row no-gutters  " >
                       <a href="bog-home.html">
                       <div class=" col-md-12 py-6 zoom">
-                        <div ng-if="img_bogota" class="bg-container overlay overlay-dark-60 parallax py-4" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_bogota}})'}"></div>
+                        <div ng-if="img_bogota" class="bg-container overlay overlay-dark-30 parallax py-4" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_bogota}})'}"></div>
                           <div class="row justify-content-center py-4 py-lg-3">
                               <div class="col-md-9">
                                 <div class="row justify-content-center text-justify">
@@ -198,7 +191,7 @@
                     </a>
                     <a href="med-home.html">
                       <div class="col-md-12 py-6 zoom">
-                          <div  ng-if="img_medellin" class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_medellin}})'}"></div>
+                          <div  ng-if="img_medellin" class="parallax bg-container overlay overlay-dark-30" ng-style="{'background-image':'url({{img_medellin}})'}"></div>
                           <div class="row justify-content-center py-3 py-lg-3">
                               <div class="col-md-9">
                                 <div class="row justify-content-center text-justify">
@@ -206,13 +199,6 @@
                                       <div class="col-md-12 text-center">
                                         <br>
                                           <a class="btn btn-sm btn-outline-light my-2 my-sm-2" href="med-home.html">MEDELLÍN</a>
-                                          <h6 class="mb-0 fs-1 fw-medium text-uppercase text-white">Opening soon</h6>
-                                          <div class="d-flex justify-content-center text-secondary" data-countdown="2019/05/24" data-countdown-template='
-                                              &lt;h4 class="mx-4 fs-1 fw-medium"&gt;%D&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; days&lt;/span&gt;&lt;/h4&gt;
-                                              &lt;h4 class="mx-4 fs-1  fw-medium"&gt;%H&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; hours&lt;/span&gt;&lt;/h4&gt;
-                                              &lt;h4 class="mx-4 fs-1  fw-medium"&gt;%M&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; minutes&lt;/span&gt;&lt;/h4&gt;
-                                              &lt;h4 class="d-none d-lg-block mx-4 fs-1 fs-lg-1 fw-medium"&gt;%S&lt;span class="d-block fs-0 fs-lg-1 text-white"&gt; seconds&lt;/span&gt;&lt;/h4&gt;
-                                          '></div>
                                           <!--<div class="owl-carousel container" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
                                               <div class="row justify-content-center">
                                                   <div class="col-lg-6">
@@ -253,6 +239,42 @@
         </main>
         <!-- End of Main Content -->
 
+        <footer class="bg-dark text-light">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center py-4">
+                  <div class="pt-5 pt-lg-0 pb-4">
+                      <br><label  style="font-size: 15px;"><i class="zmdi zmdi-phone zmdi-hc-fw mr-1"></i>01 8000 18 32 32</label>
+                      <br><label  style="font-size: 15px;"><i class="zmdi zmdi-email zmdi-hc-fw mr-1"></i>info@clickclackhotel.com</label>
+                  </div>
+                  <div class="mt-4 text-left mt-lg-auto mb-5 mb-lg-">
+                    <div class="row text-center">
+                      <ul class="mt-4 mt-lg-auto mb-5 mb-lg-0 list-unstyled list-inline px-4">
+                          <li class="mr-3 list-inline-item">
+                              <a href="https://www.instagram.com/clickclackhotel" target="_blank">
+                                  <i class="zmdi zmdi-instagram text-white"></i>
+                              </a>
+                          </li>
+                          <li class="mr-3 list-inline-item">
+                              <a href="https://www.facebook.com/clickclackhotel" target="_blank">
+                                  <i class="zmdi zmdi-facebook-box text-white"></i>
+                              </a>
+                          </li>
+                          <li class="mr-3 list-inline-item">
+                              <a href="https://www.twitter.com/clickclackhotel" target="_blank">
+                                  <i class="zmdi zmdi-twitter text-white"></i>
+                              </a>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              <div class="text-center">
+                <p class="fs--2 text-center text-white">&copy; 2019 Click Clack Hotel. All rights reserved.</p>
+                <a class=" fs--2 text-secondary" target="_blank" href='./assets/docs/terms-and-conditions.pdf'>Terms and Conditions</a>
+                <br><br>
+              </div>
+            </div>
+        </footer>
       </div>
 
       <!-- Core Javascripts -->

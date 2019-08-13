@@ -53,8 +53,8 @@ app.controller('bogotaController', function($scope, $http) {
     console.log($scope.vimeoBogota);
   });*/
 
-  $scope.vimeoBogota = "https://vimeo.com/110068041"
+  $scope.vimeoBogota = "https://vimeo.com/90269711"
   //Home Medellin
-  $scope.imageMedellin = "https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1552616792083_medellin.jpg?alt=media"
+  $scope.imageMedellin = "https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1562619115298_General%20Medellin.jpg?alt=media&token=2440989d-a57a-4695-855b-1c5f1f08b5ef"
 
 })

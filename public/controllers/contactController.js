@@ -67,6 +67,57 @@ app.controller('contactController', function($scope, $http) {
       $scope.message=''
       $scope.phone=''
     })
+  }
 
+  $scope.sendMailMedellin = function() {
+    data = {
+      areaInterest:$scope.area,
+      name:$scope.name,
+      clientMail:$scope.clientMail,
+      message:$scope.message
+    }
+    var ulr_mail;
+    switch ($scope.area) {
+      case 'Events'||'Eventos':
+        ulr_mail = 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailEventsMedellin'
+        break;
+      case 'Bookings'||'Reservas':
+        ulr_mail = 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailBookingsMedellin'
+        break;
+      case 'Suppliers'||'Compras':
+        ulr_mail = 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailSuppliersMedellin'
+        break;
+      case 'Marketing'||'Mercadeo':
+        ulr_mail = 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailMarketingMedellin'
+        break;
+      case 'Restaurant - Click Clack Kitchen'||'Restaurante - Click Clack Kitchen':
+        ulr_mail = 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailRestaurantMedellin'
+        break;
+      case 'Front Desk'||'Recepción':
+        ulr_mail = 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailFrontDeskMedellin'
+        break;
+      case 'Guest Service'||'Clientes':
+        ulr_mail = 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailGuestServiceMedellin'
+        break;
+    
+      default:
+        break;
+    }
+    var req = {
+     method: 'POST',
+     url: ulr_mail,
+     headers: {
+       'Content-Type': 'application/json',
+       'Access-Control-Allow-Origin': '*'
+     },
+     data: data
+    }
+    $http(req).then(function(){
+      $scope.area=''
+      $scope.name=''
+      $scope.clientMail=''
+      $scope.message=''
+      $scope.phone=''
+    })
   }
 })
