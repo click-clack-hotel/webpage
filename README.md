@@ -1,33 +1,31 @@
-# Spyre - Slick contemporary multipurpose theme
+# Click Clack Hotel Web
 
 ### Prerequisites
 
 ```
 Node.js
+Firebase
 ```
 
 ### Installing
 
 ```
-npm install gulp-cli -g
 npm install
+npm install gulp -g
 ```
 
 ## Running in dev mode
 
-It will run a local dev server (http://localhost:3000) and open the first page (http://localhost:3000/pages/index.html).
-Any changes in the code will reload the page immediately.
+It will run a local dev server (http://localhost:3030) and open the first page (http://localhost:3030/public/index.html).
 
 ```
-gulp
+npm start
 ```
 
 ## Deployment
 
-It will generate a dist folder with minified js and css files.
+It will compile and deploy the local project to Firebase Hosting.
 
 ```
-gulp build
+firebase deploy
 ```
-
-More information on the website.
