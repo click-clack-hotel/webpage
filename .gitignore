@@ -9,10 +9,10 @@ firebase-debug.log*
 # Firebase cache
 .firebase/
 
-assets
-node_modules
-public/assets/img
-public/assets/docs
+assets/
+node_modules/
+public/assets/img/
+public/assets/docs/
 
 # Firebase config
 

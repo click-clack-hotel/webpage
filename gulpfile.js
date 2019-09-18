@@ -19,9 +19,9 @@ var wait =          require('gulp-wait');
 // Path variables
 var PATHS = {
     DIST: {
-        BASE: 'dist',
-        IMAGES: 'dist/assets/img',
-        VENDOR: 'dist/assets/vendor'
+        BASE: 'public/dist',
+        IMAGES: 'public/dist/assets/img',
+        VENDOR: 'public/dist/assets/vendor'
     },
     BASE: {
         BASE: './',
@@ -38,9 +38,9 @@ var PATHS = {
     },
     ASSETS: {
         BASE: './',
-        CSS: 'assets/css',
-        JS: 'assets/js',
-        IMAGES: 'assets/img/**/*.+(png|jpg|svg|gif)'
+        CSS: 'public/assets/css',
+        JS: 'public/assets/js',
+        IMAGES: 'public/assets/img/**/*.+(png|jpg|svg|gif)'
     }
 }
 

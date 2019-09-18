@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Page Title -->
+    <title>Medellin | What to do | The Culture Junkie</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1553641315663_favicon.png?alt=media&token=ee05ece6-7242-44cc-8d76-f223a95c3d65" type="image/x-icon">
+
+    <!-- Vendor Stylesheets -->
+    <link href="../../assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/aos/dist/aos.css" rel="stylesheet">
+    <link href="../../assets/vendor/jquery.mb.vimeo_player/dist/css/jquery.mb.vimeo_player.min.css" rel="stylesheet">
+
+    <!-- Theme Stylesheets -->
+    <!-- <link href="../../dist/css/theme.min.css" rel="stylesheet"> -->
+    <link href="../../assets/css/theme.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Controller -->
+    <script src="./the_culture_junkie.js"></script>
+  </head>
+
+  <body class="bg-primary">
+    
+    <div ng-app="app" ng-controller="the_culture_junkie">
+
+      <!-- Preloader -->
+      <div class="preloader">
+        <div class="cardcontainer">
+          <div class="spinner">
+            <img src="../../assets/img/kk.png" width="150">
+          </div>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header>
+        <!-- Navbar -->
+        <div class="d-none d-lg-block d-xl-block">
+          <div class="spyre-navbar navbar navbar-expand-lg bg-primary fixed-top align-items-center " data-transparent data-text-color="#ffffff">
+            <div class="container">
+              <!-- WhatsApp -->
+              <a ng-if="english" title="Get in touch!" target="_blank" href={{whatsapp}} class="btn btn-secondary px-3 whatsapp">
+                <i class="fab fa-2x fa-whatsapp"></i>
+              </a>
+              <a ng-if="spanish" title="Ponte en contacto!" target="_blank" href={{whatsapp_es}} class="btn btn-secondary px-3 whatsapp">
+                <i class="fab fa-2x fa-whatsapp"></i>
+              </a>
+              <!-- Brand -->
+              <a class="navbar-brand mr-lg-5 mr-xl-6" href="../../index.html">
+                <img src="../../assets/img/logo-light.png" class="d-none d-lg-block" alt="Click Clack Hotel" width="140" />
+              </a>
+              <!-- Booking -->
+              <span class="navbar-text flex-fill d-none d-lg-inline-block text-500 text-uppercase">
+                <br>
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <input
+                        type="date" 
+                        class="form-c" 
+                        id="check-in" 
+                        value={{today}} 
+                        ng-model='in' 
+                        ng-change="changeHandler()" 
+                        placeholder="mm/dd/yyyy" 
+                        title="Check-in">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <input
+                        type="date" 
+                        class="form-c" 
+                        id="check-out" 
+                        value={{tomorrow}} 
+                        ng-model='out'
+                        ng-change="changeHandler()"
+                        placeholder="mm/dd/yyyy"
+                        title="Check-out">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="form-group">
+                        <input ng-if="english"
+                        type="number"
+                        min="1"
+                        class="form-c"
+                        id="guests"
+                        ng-model='guests'
+                        ng-change="changeHandler()"
+                        placeholder="GUESTS"
+                        title="Number of guests">
+                        <input ng-if="spanish"
+                        type="number"
+                        min="1"
+                        class="form-c"
+                        id="guests"
+                        ng-model='guests'
+                        ng-change="changeHandler()"
+                        placeholder="HUESPEDES"
+                        title="Numero de huespedes">
+                      </div>
+                    </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <a ng-if="english" class="btn btn-block btn-sm btn-secondary my-2 my-sm-0" href={{synxis}}>BOOK NOW</a>
+                      <a ng-if="spanish" class="btn btn-block btn-sm btn-secondary my-2 my-sm-0" href={{synxis_es}}>RESERVAR</a>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <a ng-if="english" class="btn btn-block btn-sm btn-outline-light my-2 my-sm-0" href={{modify}}>MODIFY BOOKING</a>
+                    <a ng-if="spanish" class="btn btn-block btn-sm btn-outline-light my-2 my-sm-0" href={{modify}}>MODIFICAR RESERVA</a>
+                  </div>
+                </div>
+              </span>
+              <!-- Menu Toggle -->
+              <div class="menu-toggle" title="Menu">
+                <div class="hamburger my-2 my-sm-0 mx-0">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="cross my-2 my-sm-0 mx-0">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+                            <!-- Language -->
+              <div>
+                  <a ng-if="english" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="Español">ES</a>
+                  <a ng-if="spanish" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="English">EN</a>
+              </div>
+              <!-- Logout -->
+              <div>
+                <a ng-if="english" class="btn btn-sm btn-outline-light" href="../../index.html" title="Back to landing"><i class="fas fa-sign-out-alt"></i></a>
+                <a ng-if="spanish" class="btn btn-sm btn-outline-light" href="../../index.html" title="Volver al landing"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+              <!-- Sidebar Menu-->
+              <div class="spyre-navbar-overlay overlay-slide">
+                <div class="container ">
+                  <div class="row">
+                    <div class="spyre-navbar-nav-container text-white menu-sidebar">
+                      <nav class="spyre-navbar-nav open">
+                        <ul ng-if="english" class="spyre-nav" style="margin-top: 20px;">
+                          <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.name}}</a></li>
+                          <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terms</a></li>
+                        </ul>
+                        <ul ng-if="spanish" class="spyre-nav" style="margin-top: 20px;">
+                          <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.nombre}}</a></li>
+                          <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terminos</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Navbar -->
+
+        <!-- Mobile Menu -->
+        <div class="d-lg-none d-xl-none">
+          <!-- WhatsApp -->
+          <a ng-if="english" title="Get in touch!" target="_blank" href={{whatsapp}} class="btn btn-secondary px-3 whatsapp">
+            <i class="fab fa-2x fa-whatsapp"></i>
+          </a>
+          <a ng-if="spanish" title="Ponte en contacto!" target="_blank" href={{whatsapp_es}} class="btn btn-secondary px-3 whatsapp">
+            <i class="fab fa-2x fa-whatsapp"></i>
+          </a>
+          <!-- Navbar -->
+          <div class="spyre-navbar navbar bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
+            <div class="container-fluid">
+              <!-- Menu Toggle -->
+              <div class="menu-toggle mx-">
+                  <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="cross">
+                    <span></span>
+                    <span></span>
+                  </div>
+              </div>
+              <!-- Brand -->
+              <div class="align-items-center text-center navbar-text flex-fill text-500 text-uppercase">
+                <a href="../../index.html">
+                  <img src="../../assets/img/logo-light.png" width="110" alt="Click Clack Hotel" />
+                </a>
+              </div>
+              <!-- Logout -->
+              <div>
+                <a class="btn btn-sm btn-outline-light" href="../../index.html" title="Back to landing"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+            </div>
+            <!-- Menu -->
+            <div class="spyre-navbar-overlay overlay-slide ">
+              <div class="container ">
+                <div class="row">
+                  <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
+                    <nav class="spyre-navbar-nav menu-mobile-layout">
+                      <ul ng-if="english" class="spyre-nav">
+                        <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.name}}</a></li>
+                        <li class="spyre-nav-item"><a target="_blank" href="./assets/docs/terms-and-conditions.pdf" class="spyre-nav-link">Terms</a></li>
+                      </ul>
+                      <ul ng-if="spanish" class="spyre-nav">
+                        <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.nombre}}</a></li>
+                        <li class="spyre-nav-item"><a target="_blank" href="./assets/docs/terms-and-conditions.pdf" class="spyre-nav-link">Terminos</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Mobile Menu -->
+      </header>
+      <!-- End of Header -->
+
+      <main class="main minh-100vh bg-primary">
+
+          <section class="module-cover parallax overlay-dark-10 fullscreen text-center"  data-jarallax-video={{vimeo}}>
+              <div class="container-fluid rin">
+                <div class="row h-100vh align-items-center">
+                  <div class="col-md-3">
+
+                  </div>
+                  <div class="col-md-6">
+                      <h1 class="text-white text-uppercase fs-4 fs-lg-6" >{{name}}</h1>
+                      <p ng-if="english" class="text-white">{{text}}</p>
+                      <p ng-if="spanish" class="text-white">{{text_es}}</p>
+                    </div>
+                </div>
+                <div class="move">
+                    <a href="#home" data-smooth-scroll data-smooth-scroll-hash="false">
+                        <i class="zmdi zmdi-long-arrow-down zmdi-hc-4x text-white"></i>
+                    </a>
+                </div>
+              </div>
+              <div class="slides-navigation"><a class="prev" href="./the_party_animal.html"><i class="fas fa-chevron-left fa-2x"></i></a><a class="next" href="./the_shopaholic.html"><i class="fas fa-chevron-right fa-2x"></i></a></div>
+          </section>
+
+
+          <!-- Section -->
+          <section class=" py-0 module-cover-slides fullscreen" id="home" >
+              <ul class="slides-container">
+                  <li ng-repeat="a in activities" class="text-center" data-overlay="0.5"><div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{a.img}})'}"></div>
+                      <div class="container">
+                          <div class="row py-10 justify-content-center">
+                              <div class="col-md-6"></div>
+                              <div class="col-md-5">
+                                <h2 class="my-0 fs-1 fw-medium text-secondary text-uppercase">{{a.title}}</h2>
+                                <br><br>
+                                <p ng-if="english" class="text-white text-justify">{{a.text}}</p>
+                                <p ng-if="spanish" class="text-white text-justify">{{a.text_es}}</p>
+                                <a class="text-300">{{a.info}}</a>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+              <div class="slides-navigation"><a class="prev" href="#"><i class="fas fa-chevron-left"></i></a><a class="next" href="#"><i class="fas fa-chevron-right"></i></a></div>
+            </section>
+            <section class="py-0 pb-0">
+              <div class="container-fluid px-0">
+                  <div class="row no-gutters">
+                    <div class="col-md-3 py-0">
+                        <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_rover}})'}"></div>
+                        <div class="row justify-content-center py-6 py-lg-8">
+                            <div class="col-md-9">
+                              <div class="row justify-content-center text-justify">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+
+
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./the_rover.html">the rover</a>
+
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-0">
+                        <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_suit}})'}"></div>
+                        <div class="row justify-content-center py-6 py-lg-8">
+                            <div class="col-md-9">
+                              <div class="row justify-content-center text-justify">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./the_social_savant.html">The Social Savant</a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 py-0">
+                        <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_party}})'}"></div>
+                        <div class="row justify-content-center py-6 py-lg-8">
+                            <div class="col-md-9">
+                              <div class="row justify-content-center text-justify">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+
+
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./the_party_animal.html">the party animal</a>
+
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 py-0">
+                        <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_shop}})'}"></div>
+                        <div class="row justify-content-center py-6 py-lg-8">
+                            <div class="col-md-9">
+                              <div class="row justify-content-center text-justify">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+
+
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./the_shopaholic.html">the shopaholic</a>
+
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-3 py-0">
+                        <div class="bg-container overlay overlay-dark-50" ng-style="{'background-image':'url({{img_raptor}})'}"></div>
+                        <div class="row justify-content-center py-6 py-lg-8">
+                            <div class="col-md-9">
+                              <div class="row justify-content-center text-justify">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+
+
+                                        <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./the_foodie-raptor.html">the foodie raptor</a>
+
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>-->
+                  </div>
+              </div>
+            </section>
+
+
+    </div>
+
+    <!-- Footer -->
+    <iframe src="../footer.html" class="footer-frame"></iframe>
+
+    <!-- Core Javascripts -->
+    <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Vendor Javascripts -->
+    <script src="../../assets/vendor/rellax/rellax.min.js"></script>
+    <script src="../../assets/vendor/typed.js/lib/typed.min.js"></script>
+    <script src="../../assets/vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../../assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="../../assets/vendor/aos/dist/aos.js"></script>
+    <script src="../../assets/vendor/jquery.mb.vimeo_player/dist/jquery.mb.vimeo_player.min.js"></script>
+
+    <!-- Theme Javascripts -->
+    <script src="../../dist/js/theme.min.js"></script>
+    <script src="../../assets/js/custom/jquery-3.2.1.min.js"></script>
+    <script src="../../assets/js/custom/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom/plugins.min.js"></script>
+    <script src="../../assets/js/custom/custom.min.js"></script>
+  </body>
+</html>

@@ -3,17 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <style media="screen">
-        .zoom {
-          transition: transform .3s;
-        }
-        .zoom:hover {
-          -ms-transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          transform: scale(1.05);
-          background: rgba(0, 0, 0, .6);
-        }
-        </style>
+        
         <!-- Page Title -->
         <title>Click Clack Hotel</title>
 
@@ -30,16 +20,18 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
         <!-- Theme Stylesheets -->
-        <link href="./dist/css/theme.min.css" rel="stylesheet">
+        <!-- <link href="./dist/css/theme.min.css" rel="stylesheet"> -->
+        <link href="./assets/css/theme.css" rel="stylesheet">
+
 
         <!-- Vendor Stylesheets -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="./controllers/landingController.js"></script>
+        <script src="./controller.js"></script>
     </head>
 
     <body class="bg-dark">
-      <div ng-app="App" ng-controller="landingController">
+      <div ng-app="app" ng-controller="controller">
         <!-- Preloader -->
         <div class="preloader">
           <div class="cardcontainer">
@@ -50,17 +42,8 @@
         </div>
         <!-- End of Preloader -->
         
-          <div class="navbar fixed-top" 
-          style="background-color: rgba(20, 20, 20, 0.95); 
-          height:60px !important;   
-          position: fixed;
-          top: 0;
-          width: 100%; 
-          -webkit-box-shadow: 0 4px 4px 0 #000, 0 0 2px 0 #000;
-          -moz-box-shadow: 0 4px 4px 0 #000, 0 0 2px 0 #000;
-          box-shadow: 0 4px 4px 0 #000, 0 0 2px 0 #000;"
-          >
-                <img style="margin: auto;" src="./assets/img/logo-light.png" width="110" />
+        <div class="custom-navbar">
+                <img style="margin-top: 10px;" src="./assets/img/logo-light.png" height="50" />
           </div>
           
         <main class="main minh-100vh">
@@ -72,7 +55,7 @@
                     <div class="container">
                         <div class="row h-100vh align-items-center">
                             <div class="col">
-                              <a class="btn btn-lg btn-outline-light my-2 my-sm-2"  style="position: relative; top: 10%;" href="bog-home.html"> BOGOTÁ</a>
+                              <a class="btn btn-lg btn-outline-light my-2 my-sm-2"  style="position: relative; top: 10%;" href="./bogota/home.html"> BOGOTÁ</a>
                             </div>
                         </div>
                         <div class="owl-carousel" style="position: absolute; top: 75%;" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
@@ -108,7 +91,7 @@
                     <div class="container">
                         <div class="row h-100vh align-items-center">
                           <div class="col">
-                            <a class="btn btn-lg btn-outline-light my-2 my-sm-2" style="position: relative; top: 10%;" href="med-home.html">MEDELLÍN</a>
+                            <a class="btn btn-lg btn-outline-light my-2 my-sm-2" style="position: relative; top: 10%;" href="./medellin/home.html">MEDELLÍN</a>
                             <!--<div class="owl-carousel" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6">
@@ -155,33 +138,7 @@
                                   <div class="row">
                                       <div class="col-md-12 text-center">
                                         <br>
-                                          <a class="btn btn-sm btn-outline-light my-2 my-sm-2" href="bog-home.html">BOGOTÁ</a>
-                                          <!--<div class="owl-carousel container" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
-                                              <div class="row justify-content-center">
-                                                  <div class="col-lg-6">
-                                                      <blockquote class="blockquote" data-aos="zoom-out-up">
-                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_bogota[0].cita}}</p>
-                                                          <footer class="blockquote-footer text-right">{{citas_bogota[0].autor}}</footer>
-                                                      </blockquote>
-                                                  </div>
-                                              </div>
-                                              <div class="row justify-content-center">
-                                                  <div class="col-lg-6">
-                                                      <blockquote class="blockquote">
-                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_bogota[1].cita}}</p>
-                                                          <footer class="blockquote-footer text-right">{{citas_bogota[1].autor}}</footer>
-                                                      </blockquote>
-                                                  </div>
-                                              </div>
-                                              <div class="row justify-content-center">
-                                                  <div class="col-lg-6">
-                                                      <blockquote class="blockquote">
-                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_bogota[2].cita}}</p>
-                                                          <footer class="blockquote-footer text-right">{{citas_bogota[2].autor}}</footer>
-                                                      </blockquote>
-                                                  </div>
-                                              </div>
-                                          </div>-->
+                                          <a class="btn btn-sm btn-outline-light my-2 my-sm-2" href="./bogota/home.html">BOGOTÁ</a>
                                       </div>
                                   </div>
                                 </div>
@@ -198,33 +155,7 @@
                                   <div class="row">
                                       <div class="col-md-12 text-center">
                                         <br>
-                                          <a class="btn btn-sm btn-outline-light my-2 my-sm-2" href="med-home.html">MEDELLÍN</a>
-                                          <!--<div class="owl-carousel container" data-carousel-options='{"margin":30,"nav":false,"items":1,"loop":true,"dots":false, "autoplay": true}'>
-                                              <div class="row justify-content-center">
-                                                  <div class="col-lg-6">
-                                                      <blockquote class="blockquote" data-aos="zoom-out-up">
-                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_medellin[0].cita}}</p>
-                                                          <footer class="blockquote-footer text-right">{{citas_medellin[0].autor}}</footer>
-                                                      </blockquote>
-                                                  </div>
-                                              </div>
-                                              <div class="row justify-content-center">
-                                                  <div class="col-lg-6">
-                                                      <blockquote class="blockquote">
-                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_medellin[1].cita}}</p>
-                                                          <footer class="blockquote-footer text-right">{{citas_medellin[1].autor}}</footer>
-                                                      </blockquote>
-                                                  </div>
-                                              </div>
-                                              <div class="row justify-content-center">
-                                                  <div class="col-lg-6">
-                                                      <blockquote class="blockquote">
-                                                          <p class="text-white text-right" style="font-size:x-small">{{citas_medellin[2].cita}}</p>
-                                                          <footer class="blockquote-footer text-right">{{citas_medellin[2].autor}}</footer>
-                                                      </blockquote>
-                                                  </div>
-                                              </div>
-                                          </div>-->
+                                          <a class="btn btn-sm btn-outline-light my-2 my-sm-2" href="./medellin/home.html">MEDELLÍN</a>
                                       </div>
                                   </div>
                                 </div>
@@ -270,7 +201,7 @@
               </div>
               <div class="text-center">
                 <p class="fs--2 text-center text-white">&copy; 2019 Click Clack Hotel. All rights reserved.</p>
-                <a class=" fs--2 text-secondary" target="_blank" href='./assets/docs/terms-and-conditions.pdf'>Terms and Conditions</a>
+                <a class=" fs--2 text-secondary" target="_blank" href="./assets/docs/terms-and-conditions.pdf">Terms and Conditions</a><br><a class=" fs--2 text-secondary" target="_blank" href="https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1566955080465_REGISTRO_HOTELERO.pdf?alt=media&token=88806e63-cce8-41ef-88ea-e78a84a18535">Guest Terms and Conditions</a>
                 <br><br>
               </div>
             </div>

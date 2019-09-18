@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Page Title -->
+    <title>Bogota | Contact</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1553641315663_favicon.png?alt=media&token=ee05ece6-7242-44cc-8d76-f223a95c3d65" type="image/x-icon">
+
+    <!-- Vendor Stylesheets -->
+    <link href="../assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="../assets/vendor/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/aos/dist/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/jquery.mb.vimeo_player/dist/css/jquery.mb.vimeo_player.min.css" rel="stylesheet">
+
+    <!-- Theme Stylesheets -->
+    <!-- <link href="../dist/css/theme.min.css" rel="stylesheet"> -->
+    <link href="../assets/css/theme.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Controller -->
+    <script src="./contact.js"></script>
+  </head>
+
+  <body class="bg-primary">
+    
+    <div ng-app="app" ng-controller="contact">
+
+      <!-- Preloader -->
+      <div class="preloader">
+        <div class="cardcontainer">
+          <div class="spinner">
+            <img src="../assets/img/kk.png" width="150">
+          </div>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header>
+        <!-- Navbar -->
+        <div class="d-none d-lg-block d-xl-block">
+          <div class="spyre-navbar navbar navbar-expand-lg bg-primary fixed-top align-items-center " data-transparent data-text-color="#ffffff">
+            <div class="container">
+              <!-- WhatsApp -->
+              <a ng-if="english" title="Get in touch!" target="_blank" href={{whatsapp}} class="btn btn-secondary px-3 whatsapp">
+                <i class="fab fa-2x fa-whatsapp"></i>
+              </a>
+              <a ng-if="spanish" title="Ponte en contacto!" target="_blank" href={{whatsapp_es}} class="btn btn-secondary px-3 whatsapp">
+                <i class="fab fa-2x fa-whatsapp"></i>
+              </a>
+              <!-- Brand -->
+              <a class="navbar-brand mr-lg-5 mr-xl-6" href="../index.html">
+                <img src="../assets/img/logo-light.png" class="d-none d-lg-block" alt="Click Clack Hotel" width="140" />
+              </a>
+              <!-- Booking -->
+              <span class="navbar-text flex-fill d-none d-lg-inline-block text-500 text-uppercase">
+                <br>
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <input
+                        type="date" 
+                        class="form-c" 
+                        id="check-in" 
+                        value={{today}} 
+                        ng-model='in' 
+                        ng-change="changeHandler()" 
+                        placeholder="mm/dd/yyyy" 
+                        title="Check-in">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <input
+                        type="date" 
+                        class="form-c" 
+                        id="check-out" 
+                        value={{tomorrow}} 
+                        ng-model='out'
+                        ng-change="changeHandler()"
+                        placeholder="mm/dd/yyyy"
+                        title="Check-out">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="form-group">
+                        <input ng-if="english"
+                        type="number"
+                        min="1"
+                        class="form-c"
+                        id="guests"
+                        ng-model='guests'
+                        ng-change="changeHandler()"
+                        placeholder="GUESTS"
+                        title="Number of guests">
+                        <input ng-if="spanish"
+                        type="number"
+                        min="1"
+                        class="form-c"
+                        id="guests"
+                        ng-model='guests'
+                        ng-change="changeHandler()"
+                        placeholder="HUESPEDES"
+                        title="Numero de huespedes">
+                      </div>
+                    </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <a ng-if="english" class="btn btn-block btn-sm btn-secondary my-2 my-sm-0" href={{synxis}}>BOOK NOW</a>
+                      <a ng-if="spanish" class="btn btn-block btn-sm btn-secondary my-2 my-sm-0" href={{synxis_es}}>RESERVAR</a>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <a ng-if="english" class="btn btn-block btn-sm btn-outline-light my-2 my-sm-0" href={{modify}}>MODIFY BOOKING</a>
+                    <a ng-if="spanish" class="btn btn-block btn-sm btn-outline-light my-2 my-sm-0" href={{modify}}>MODIFICAR RESERVA</a>
+                  </div>
+                </div>
+              </span>
+              <!-- Menu Toggle -->
+              <div class="menu-toggle" title="Menu">
+                <div class="hamburger my-2 my-sm-0 mx-0">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="cross my-2 my-sm-0 mx-0">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+                            <!-- Language -->
+              <div>
+                <a ng-if="english" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="Español">ES</a>
+                <a ng-if="spanish" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="English">EN</a>
+              </div>
+              <!-- Logout -->
+              <div>
+                <a ng-if="english" class="btn btn-sm btn-outline-light" href="../index.html" title="Back to landing"><i class="fas fa-sign-out-alt"></i></a>
+                <a ng-if="spanish" class="btn btn-sm btn-outline-light" href="../index.html" title="Volver al landing"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+              <!-- Sidebar Menu-->
+              <div class="spyre-navbar-overlay overlay-slide">
+                <div class="container ">
+                  <div class="row">
+                    <div class="spyre-navbar-nav-container text-white menu-sidebar">
+                      <nav class="spyre-navbar-nav open">
+                        <ul ng-if="english" class="spyre-nav" style="margin-top: 20px;">
+                          <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.name}}</a></li>
+                          <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terms</a></li>
+                        </ul>
+                        <ul ng-if="spanish" class="spyre-nav" style="margin-top: 20px;">
+                          <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.nombre}}</a></li>
+                          <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terminos</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Navbar -->
+
+        <!-- Mobile Menu -->
+        <div class="d-lg-none d-xl-none">
+          <!-- WhatsApp -->
+          <a ng-if="english" title="Get in touch!" target="_blank" href={{whatsapp}} class="btn btn-secondary px-3 whatsapp">
+            <i class="fab fa-2x fa-whatsapp"></i>
+          </a>
+          <a ng-if="spanish" title="Ponte en contacto!" target="_blank" href={{whatsapp_es}} class="btn btn-secondary px-3 whatsapp">
+            <i class="fab fa-2x fa-whatsapp"></i>
+          </a>
+          <!-- Navbar -->
+          <div class="spyre-navbar navbar bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
+            <div class="container-fluid">
+              <!-- Menu Toggle -->
+              <div class="menu-toggle mx-">
+                  <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="cross">
+                    <span></span>
+                    <span></span>
+                  </div>
+              </div>
+              <!-- Brand -->
+              <div class="align-items-center text-center navbar-text flex-fill text-500 text-uppercase">
+                <a href="../index.html">
+                  <img src="../assets/img/logo-light.png" width="110" alt="Click Clack Hotel" />
+                </a>
+              </div>
+              <!-- Logout -->
+              <div>
+                <a class="btn btn-sm btn-outline-light" href="../index.html" title="Back to landing"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+            </div>
+            <!-- Menu -->
+            <div class="spyre-navbar-overlay overlay-slide ">
+              <div class="container ">
+                <div class="row">
+                  <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
+                    <nav class="spyre-navbar-nav menu-mobile-layout">
+                      <ul ng-if="english" class="spyre-nav">
+                        <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.name}}</a></li>
+                        <li class="spyre-nav-item"><a target="_blank" href="./assets/docs/terms-and-conditions.pdf" class="spyre-nav-link">Terms</a></li>
+                      </ul>
+                      <ul ng-if="spanish" class="spyre-nav">
+                        <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.nombre}}</a></li>
+                        <li class="spyre-nav-item"><a target="_blank" href="./assets/docs/terms-and-conditions.pdf" class="spyre-nav-link">Terminos</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Mobile Menu -->
+      </header>
+      <!-- End of Header -->
+
+      <main class="main bg-dark minh-100vh">
+
+          <!-- Section -->
+          <section id="section-2" class="pb-0">
+              <div class="container mb-8">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <h3 class="my-0 fs-1 fw-medium text-white text-uppercase">Bogotá</h3>
+                          <h2 ng-if="english" class="mb-5 fw-medium text-secondary text-uppercase">Contact Us</h2>
+                          <h2 ng-if="spanish" class="mb-5 fw-medium text-secondary text-uppercase">Contáctanos</h2>
+                          <form class="col px-5 px-lg-8 py-6 py-lg-0">
+                            <div class="form-group mb-4">
+                              <select ng-if="english"  class="form-control" ng-model='area'>
+                                <option selected>Area of interest...</option>
+                                <option>Events</option>
+                                <option>Bookings</option>
+                                <option>Suppliers</option>
+                                <option>Marketing</option>
+                                <option>Ciengramos Restaurant</option>
+                                <option>Front Desk</option>
+                                <option>Guest Service</option>
+                              </select>
+                              <select ng-if="spanish"  class="form-control" ng-model='area'>
+                                  <option selected>Area de interes...</option>
+                                  <option>Eventos</option>
+                                  <option>Reservas</option>
+                                  <option>Proveedores</option>
+                                  <option>Mercadeo</option>
+                                  <option>Ciengramos</option>
+                                  <option>Recepción</option>
+                                  <option>Servicio al cliente</option>
+                                </select>
+                            </div>
+                              <div class="form-group mb-4">
+                                  <input ng-if="english" type="text" class="form-control" ng-model='name' placeholder="Full name">
+                                  <input ng-if="spanish" type="text" class="form-control" ng-model='name' placeholder="Nombre completo">
+                              </div>
+                              <div class="form-group mb-4">
+                                  <input ng-if="english" type="email" class="form-control" ng-model='clientMail' placeholder="Email address">
+                                  <input ng-if="spanish" type="email" class="form-control" ng-model='clientMail' placeholder="Correo electrónico">
+                              </div>
+                              <div class="form-group mb-4">
+                                  <textarea ng-if="english" class="form-control" rows="8" ng-model='message' placeholder="Message"></textarea>
+                                  <textarea ng-if="spanish" class="form-control" rows="8" ng-model='message' placeholder="Mensaje"></textarea>
+                              </div>
+                              <button ng-if="english" ng-click="sendMail()" data-toggle="modal" data-target="#confirmation" type="button" class="btn btn-outline-secondary btn-block">Send<i class="zmdi zmdi-mail-send ml-2"></i></button>
+                              <button ng-if="spanish" ng-click="sendMail()" data-toggle="modal" data-target="#confirmation" type="button" class="btn btn-outline-secondary btn-block">Enviar<i class="zmdi zmdi-mail-send ml-2"></i></button>
+                          </form>
+                        </div>
+                  </div>
+                  <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog " role="document">
+                      <div ng-if="english" class="modal-content bg-primary">
+                        <div class="modal-header text-center">
+                          <h4 class="modal-title text-secondary w-100">CONTACT</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body mx-3">
+                          <h6 class="text-white">We have received your message, we will contact you shortly!</h6>
+                        </div>
+                      </div>
+                      <div ng-if="spanish" class="modal-content bg-primary">
+                          <div class="modal-header text-center">
+                            <h4 class="modal-title text-secondary w-100">CONTACTO</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body mx-3">
+                            <h6 class="text-white">Hemos recibido tu mensaje, nos contacteremos prontamente contigo!</h6>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="container-fluid px-0">
+
+                  <div class="row no-gutters justify-content-center">
+                      <div class="col-md-6">
+                          <div class="py-15" data-latlng="4.675261, -74.047387" data-zoom="16" data-marker="../assets/img/marker.png">
+
+                          </div>
+                      </div>
+                      <div class="col-md-6 py-5 bg-primary overflow-hidden">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+                              <div class="row justify-content-center text-justify">
+                                <div class="row">
+                                    <div ng-if="english" class="col-md-12 ">
+                                      <p class="text-white">Click Clack Hotel </p>
+                                      <p class="text-500">
+                                        57 (1) 743 04 04<br>
+                                        Reception: Ext. 200<br>
+                                        Reservations: Ext.105<br>
+                                        Apache rooftop bar: Ext. 112<br>
+                                        Ciengramos restaurant: Ext. 100<br>
+                                        Administration: Ext. 102<br>
+                                        Accounting: Ext. 108<br>
+                                        Events: Ext. 107<br>
+                                        WhatsApp: (+57) 320 417 0006<br>
+                                        01 8000 18 32 32<br><br>
+                                        <a class="text-white">info@clickclackhotel.com</a><br>
+                                        <a class="text-secondary">clickclackhotel.com</a></p>
+                                    </div>
+                                    <div ng-if="spanish" class="col-md-12 ">
+                                        <p class="text-white">Click Clack Hotel </p>
+                                        <p class="text-500">
+                                          57 (1) 743 04 04<br>
+                                          Recepción: Ext. 200<br>
+                                          Reservas: Ext.105<br>
+                                          Apache: Ext. 112<br>
+                                          Ciengramos: Ext. 100<br>
+                                          Administración: Ext. 102<br>
+                                          Contabilidad: Ext. 108<br>
+                                          Eventos: Ext. 107<br>
+                                          WhatsApp: (+57) 320 417 0006<br>
+                                          01 8000 18 32 32<br><br>
+                                          <a class="text-white">info@clickclackhotel.com</a><br>
+                                          <a class="text-secondary">clickclackhotel.com</a></p>
+                                      </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+
+                  </div>
+              </div>
+          </section>
+          <!-- End of Section -->
+
+          <!-- Section -->
+
+          <!-- End of Section -->
+
+          <!-- Section -->
+          <!-- <section class="py-8 overflow-hidden text-center bg-primary">
+              <div class="container-fluid">
+                  <div class="row align-items-center justify-content-center">
+                      <div class="col-10 col-lg-5">
+                          <h2 class="mb-4 text-white text-uppercase">work with us</h2>
+                          <a href="bog-talent.html" class="btn btn-lg btn-outline-secondary px-6">Talent</a>
+                      </div>
+                  </div>
+              </div>
+          </section> -->
+          <!-- End of Section -->
+
+          <!-- Section -->
+
+          <!-- End of Section -->
+      </main>
+
+    </div>
+    <!-- Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBuyKngB9VC3zgY_uEB-DKL9BKYMekbeY"></script>
+
+
+    <!-- Footer -->
+    <iframe src="./footer.html" class="footer-frame"></iframe>
+
+    <!-- Core Javascripts -->
+    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Vendor Javascripts -->
+    <script src="../assets/vendor/rellax/rellax.min.js"></script>
+    <script src="../assets/vendor/typed.js/lib/typed.min.js"></script>
+    <script src="../assets/vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="../assets/vendor/aos/dist/aos.js"></script>
+    <script src="../assets/vendor/jquery.mb.vimeo_player/dist/jquery.mb.vimeo_player.min.js"></script>
+
+    <!-- Theme Javascripts -->
+    <script src="../dist/js/theme.min.js"></script>
+    <script src="../assets/js/custom/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/custom/popper.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../assets/js/custom/plugins.min.js"></script>
+    <script src="../assets/js/custom/custom.min.js"></script>
+  </body>
+</html>

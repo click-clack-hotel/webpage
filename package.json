@@ -3,23 +3,23 @@
   "version": "1.0.0",
   "description": "Click Clack Hotel",
   "keywords": [
-    "css",
-    "sass",
-    "mobile-first",
-    "responsive",
-    "front-end",
-    "framework",
-    "web",
-    "bootstrap",
-    "webinning",
-    "theme",
-    "spyre"
+    "click clack hotel",
+    "bogota",
+    "medellin",
+    "desing",
+    "luxury",
+    "fashion",
+    "art",
+    "food",
+    "restaurant",
+    "events",
+    "bar"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "style": "pages/assets/css/spyre.css",
+  "style": "public/dist/css/theme.min.css",
   "sass": "scss/spyre.scss",
   "main": "pages/js/spyre",
   "author": "Carlos Eduardo Rincón Hurtado",
@@ -51,7 +51,6 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
     "firebase": "^5.7.2",
     "firebase-admin": "^6.4.0",
     "firebase-tools": "^6.2.2",

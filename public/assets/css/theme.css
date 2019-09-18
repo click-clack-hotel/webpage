@@ -2,6 +2,7 @@
    Custom styles
    ========================================================================== */
 
+
 /**
  * Define you custome style here.
  * It will be merged with the default style.
@@ -49,6 +50,65 @@
  /* ==========================================================================
     Gradients for backgrounds
     ========================================================================== */
+
+    .zoom {
+        transition: transform .3s;
+      }
+      .zoom:hover {
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.05);
+        background: rgba(0, 0, 0, .6);
+      }
+
+    .whatsapp {
+        -webkit-box-shadow: 0px 0px 43px -24px rgba(0,0,0,0.95);
+        -moz-box-shadow: 0px 0px 43px -24px rgba(0,0,0,0.95);
+        box-shadow: 0px 0px 43px -24px rgba(0,0,0,0.95);
+        position: fixed; 
+        z-index:100; 
+        bottom: 25px;
+        right: 25px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .menu-sidebar {
+        border:none; 
+        background: rgb(10, 10, 10, 0.9); 
+        position: absolute; 
+        left:0;
+        -webkit-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+        -moz-box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+        box-shadow: 1px 0px 21px -3px rgba(0,0,0,0.95);
+        height: 100vh;
+        width: 21vw;
+        padding-left: 5vw;
+    }
+
+    .menu-mobile {
+        border:none; 
+        width: 100vw;
+        height: 100vh;
+        text-align: center !important;
+        position: absolute;
+        top: 0px;
+    }
+
+    .menu-mobile-layout {
+        margin-top: -10vh;
+        font-size: 2rem;
+    }
+    
+
+    .footer-frame {
+        border:none; 
+        width: 100vw;
+        height:293px;
+    }
+
     .module-cover-slides {
         letter-spacing: .03125rem;
         font-size: .9375rem;
@@ -195,6 +255,7 @@
 
 
     .form-c {
+    text-align: center;
     display: block;
     width: 100%;
     padding: 10px 5px;
@@ -3268,6 +3329,7 @@
  .form-group
  {
      margin-bottom: 1rem;
+     
  }
 
  .form-text
@@ -15945,12 +16007,11 @@ animation: zoominoutsinglefeatured 1s infinite ;
      position: relative;
      top: -1px;
      left: 3px;
-
      width: 37px;
      min-width: 37px;
      height: 37px;
-
      cursor: pointer;
+     margin-right: 2vw;
  }
  .menu-toggle span
  {
@@ -16313,10 +16374,29 @@ animation: zoominoutsinglefeatured 1s infinite ;
 
  /* Navbar Ovrelay
     ========================================================================== */
+    .video-overlay
+    {
+      background: rgba(50, 50, 50, .2);
+      height: 100vh;
+
+    }
+
     .rin
     {
       background: rgba(50, 50, 50, .2);
+      height: 100vh;
 
+    }
+
+    .custom-navbar {
+        position: fixed;
+        height: 70px;
+        text-align: center;
+        top: 0;
+        z-index: 5;
+        width: 100%;
+        background-color: rgb(20, 21, 23, 0.95);
+        box-shadow: 0 -4px 10px 0 #000;
     }
  .spyre-navbar-overlay
  {
@@ -16331,7 +16411,7 @@ animation: zoominoutsinglefeatured 1s infinite ;
      width: 30%;
      height: 100%;
 
-     background: rgba(0, 0, 0, .5);
+     background: rgba(0, 0, 0, .6);
  }
  .spyre-navbar-overlay.open
  {
