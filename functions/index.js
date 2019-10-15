@@ -154,15 +154,14 @@ exports.getRoomsMedellin = functions.https.onRequest((request, response) => {
     response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     app.content.get('rooms')
       .then(function(data){
-        
+        console.log(data);
         if (
           data.xs != undefined && 
           data.s != undefined &&
           data.m != undefined &&
           data.l != undefined &&
           data.xl != undefined &&
-          data.xxl != undefined &&
-          data.xxxl != undefined
+          data.xxl != undefined
           ) {
           app.storage.getFile(data.xs[0])
           .then(function(file){
@@ -182,11 +181,7 @@ exports.getRoomsMedellin = functions.https.onRequest((request, response) => {
                     app.storage.getFile(data.xxl[0])
                     .then(function(file){
                       data.xxl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
-                      app.storage.getFile(data.xxxl[0])
-                      .then(function(file){
-                        data.xxxl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
-                        response.send(data);
-                      }).catch(error => console.log(error))
+                      response.send(data);
                     }).catch(error => console.log(error))
                   }).catch(error => console.log(error))
                 }).catch(error => console.log(error))
@@ -194,6 +189,7 @@ exports.getRoomsMedellin = functions.https.onRequest((request, response) => {
             }).catch(error => console.log(error))
           }).catch(error => console.log(error))
         } else {
+          console.log('else');
           response.send(data);
         }
       })

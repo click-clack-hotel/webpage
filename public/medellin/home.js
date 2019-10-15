@@ -8,6 +8,7 @@ app.controller('home', function($scope, $http) {
     $scope.data = response;
     return response;
   });
+  // $scope.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1570902385821_General%20Medellin.jpg?alt=media&token=9e055cb6-b9a7-47eb-9e13-1ecbe445332e'
   request.then(function (data) {
     $scope.background = data.data.background;
     $scope.textEnglish = data.data.textEnglish;
@@ -146,7 +147,7 @@ app.controller('home', function($scope, $http) {
   $scope.tomorrow = getTomorrow(new Date())  
   $scope.synxis='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=en-US&rooms=1&sbe_ri=0'
   $scope.synxis_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=es-ES&rooms=1&sbe_ri=0'
-  $scope.modify = 'https://gc.synxis.com/rez.aspx?Hotel=70051&Chain=19511&template=RBE&shell=RBE&locale=es&start=searchres'
+  $scope.modify = 'https://be.synxis.com/signIn?adult=1&arrive=2019-10-10&chain=19511&child=0&currency=COP&depart=2019-10-11&hotel=70051&level=hotel&locale=en-US&rooms=1&start=availresults'
   $scope.changeHandler = function() {
     $scope.tomorrow = getTomorrow($scope.in)
     $scope.synxis = 'https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=70051&level=hotel&locale=en-US&rooms=1&sbe_ri=0&start=availresults'
