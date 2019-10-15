@@ -154,7 +154,6 @@ exports.getRoomsMedellin = functions.https.onRequest((request, response) => {
     response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     app.content.get('rooms')
       .then(function(data){
-        console.log(data);
         if (
           data.xs != undefined && 
           data.s != undefined &&
@@ -189,7 +188,6 @@ exports.getRoomsMedellin = functions.https.onRequest((request, response) => {
             }).catch(error => console.log(error))
           }).catch(error => console.log(error))
         } else {
-          console.log('else');
           response.send(data);
         }
       })
