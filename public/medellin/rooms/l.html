@@ -235,7 +235,7 @@
       <main class="main minh-100vh bg-primary">
           <!-- Section -->
           <section class="py-0 overflow-hidden text-center">
-              <div class="bg-container overlay ovarlay-dark-40 parallax" data-rellax-percentage="0.5"  style='background-image: url("{{img_l}}")'></div>
+              <div ng-if="img_l" class="bg-container overlay ovarlay-dark-40 parallax" data-rellax-percentage="0.5"  ng-style="{'background-image':'url({{img_l}})'}"></div>
               <div class="container">
                   <div class="row h-100vh align-items-center">
                       <div class="col">

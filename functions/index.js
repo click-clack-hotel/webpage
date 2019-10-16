@@ -78,7 +78,8 @@ exports.getHomeMedellin = functions.https.onRequest((request, response) => {
         if (home.background != undefined) {
           app.storage.getFile(home.background)
           .then(function(file){
-            home.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+            var image_file = file.file.replace(" ", "%20");
+            home.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
             response.send(home);
           }).catch(error => console.log(error))
         } else {
@@ -100,10 +101,12 @@ exports.getRestaurantBarBogota = functions.https.onRequest((request, response) =
         if (data.ciengramos.image != undefined && data.apache.image != undefined) {
           app.storage.getFile(data.ciengramos.image)
           .then(function(file){
-            data.ciengramos.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+            var image_file = file.file.replace(" ", "%20");
+            data.ciengramos.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
             app.storage.getFile(data.apache.image)
             .then(function(file){
-              data.apache.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+              var image_file = file.file.replace(" ", "%20");
+              data.apache.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
               response.send(data);
             }).catch(error => console.log(error))
           }).catch(error => console.log(error))
@@ -125,12 +128,14 @@ exports.getAboutMedellin = functions.https.onRequest((request, response) => {
       .then(function(data){
         app.storage.getFile(data.background[0])
         .then(function(file){
-          data.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+          var image_file = file.file.replace(" ", "%20");
+          data.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
           if (data.gallery.length > 0) {
             data.gallery.forEach((element, index) => {
               app.storage.getFile(element)
               .then(function(file){
-                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+                var image_file = file.file.replace(" ", "%20");
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
                   response.send(data);
                 }
@@ -164,22 +169,28 @@ exports.getRoomsMedellin = functions.https.onRequest((request, response) => {
           ) {
           app.storage.getFile(data.xs[0])
           .then(function(file){
-            data.xs = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+            var image_file = file.file.replace(" ", "%20");
+            data.xs = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
             app.storage.getFile(data.s[0])
             .then(function(file){
-              data.s = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+              var image_file = file.file.replace(" ", "%20");
+              data.s = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
               app.storage.getFile(data.m[0])
               .then(function(file){
-                data.m = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                var image_file = file.file.replace(" ", "%20");
+                data.m = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                 app.storage.getFile(data.l[0])
                 .then(function(file){
-                  data.l = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                  var image_file = file.file.replace(" ", "%20");
+                  data.l = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                   app.storage.getFile(data.xl[0])
                   .then(function(file){
-                    data.xl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                    var image_file = file.file.replace(" ", "%20");
+                    data.xl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                     app.storage.getFile(data.xxl[0])
                     .then(function(file){
-                      data.xxl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                      var image_file = file.file.replace(" ", "%20");
+                      data.xxl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                       response.send(data);
                     }).catch(error => console.log(error))
                   }).catch(error => console.log(error))
@@ -212,19 +223,24 @@ exports.getRoomsBogota = functions.https.onRequest((request, response) => {
           ) {
           app.storage.getFile(data.xs[0])
           .then(function(file){
-            data.xs = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+            var image_file = file.file.replace(" ", "%20");
+            data.xs = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
             app.storage.getFile(data.s[0])
             .then(function(file){
-              data.s = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+              var image_file = file.file.replace(" ", "%20");
+              data.s = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
               app.storage.getFile(data.m[0])
               .then(function(file){
-                data.m = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                var image_file = file.file.replace(" ", "%20");
+                data.m = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                 app.storage.getFile(data.l[0])
                 .then(function(file){
-                  data.l = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                  var image_file = file.file.replace(" ", "%20");
+                  data.l = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                   app.storage.getFile(data.xl[0])
                   .then(function(file){
-                    data.xl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                    var image_file = file.file.replace(" ", "%20");
+                    data.xl = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                     response.send(data);
                   }).catch(error => console.log(error))
                 }).catch(error => console.log(error))
@@ -251,7 +267,8 @@ exports.getCiengramos = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -277,7 +294,8 @@ exports.getApache = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -302,12 +320,14 @@ exports.getSpecialsBogota = functions.https.onRequest((request, response) => {
         if (data.background != undefined) {
           app.storage.getFile(data.background)
           .then(function(file){
-            data.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+            var image_file = file.file.replace(" ", "%20");
+            data.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
             if (data.specials.length > 0) {
               data.specials.forEach((element, index) => {
                 app.storage.getFile(element.image)
                 .then(function(file){
-                  data.specials[index].image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+                  var image_file = file.file.replace(" ", "%20");
+                  data.specials[index].image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                   if (index === data.specials.length-1) {
                     response.send(data);
                   }
@@ -335,19 +355,23 @@ exports.getEventsBogota = functions.https.onRequest((request, response) => {
       .then(function(data){        
         app.storage.getFile(data.concretePark.image)
         .then(function(file){
-          data.concretePark.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+          var image_file = file.file.replace(" ", "%20");
+          data.concretePark.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
           app.storage.getFile(data.meetingsRoom.image)
           .then(function(file){
-            data.meetingsRoom.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+            var image_file = file.file.replace(" ", "%20");
+            data.meetingsRoom.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
             app.storage.getFile(data.image)
             .then(function(file){
-              data.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+              var image_file = file.file.replace(" ", "%20");
+              data.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
               if (data.culturalAgenda.length > 0) {
                 data.culturalAgenda.forEach((event, index) => {
                   event.gallery.forEach(element => {
                     app.storage.getFile(element)
                     .then(function(file){
-                      event.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+                      var image_file = file.file.replace(" ", "%20");
+                      event.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                     }).catch(error => console.log(error))
                   });
                   if (index === data.culturalAgenda.length-1) {
@@ -377,7 +401,8 @@ exports.getXsMedellin = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -403,7 +428,8 @@ exports.getXsBogota = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -429,7 +455,8 @@ exports.getSMedellin = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -455,7 +482,8 @@ exports.getSBogota = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -481,7 +509,8 @@ exports.getMMedellin = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -507,7 +536,8 @@ exports.getMBogota = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -533,7 +563,8 @@ exports.getLMedellin = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {                
                 response.send(data);
               }
@@ -559,7 +590,8 @@ exports.getLBogota = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {                
                 response.send(data);
               }
@@ -585,7 +617,8 @@ exports.getXlMedellin = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {               
                 response.send(data);
               }
@@ -611,7 +644,8 @@ exports.getXlBogota = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {               
                 response.send(data);
               }
@@ -637,7 +671,8 @@ exports.get2XlMedellin = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -663,7 +698,8 @@ exports.get3XlMedellin = functions.https.onRequest((request, response) => {
           data.gallery.forEach((element, index) => {
             app.storage.getFile(element)
             .then(function(file){
-              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+              var image_file = file.file.replace(" ", "%20");
+              data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
                 response.send(data);
               }
@@ -687,12 +723,13 @@ exports.getAboutBogota = functions.https.onRequest((request, response) => {
       .then(function(data){
         app.storage.getFile(data.background[0])
         .then(function(file){
-          data.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media';
+          var image_file = file.file.replace(" ", "%20");
+          data.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
           if (data.gallery.length > 0) {
             data.gallery.forEach((element, index) => {
               app.storage.getFile(element)
               .then(function(file){
-                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+file.file+'?alt=media'};
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
                   response.send(data);
                 }

@@ -2,13 +2,11 @@ var app = angular.module('app', []);
 app.controller('home', function($scope, $http) {
 
   $scope.id = 'home';
-
   var request = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getHomeMedellin")
   .then(function(response) {
     $scope.data = response;
     return response;
   });
-  // $scope.background = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1570902385821_General%20Medellin.jpg?alt=media&token=9e055cb6-b9a7-47eb-9e13-1ecbe445332e'
   request.then(function (data) {
     $scope.background = data.data.background;
     $scope.textEnglish = data.data.textEnglish;

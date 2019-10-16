@@ -236,7 +236,7 @@
           <!-- Section -->
 
           <section class="py-0 overflow-hidden text-center">
-              <div class="bg-container overlay varlay-dark-50 parallax" data-rellax-percentage="0.5"  style='background-image: url("{{img_apache}}")'></div>
+              <div ng-if="img_apaches" class="bg-container overlay varlay-dark-50 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_apache}})'}"></div>
               <div class="container">
                   <div class="row h-100vh align-items-center">
                       <div class="col">
