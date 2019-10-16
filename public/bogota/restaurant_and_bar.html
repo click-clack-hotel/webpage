@@ -238,7 +238,7 @@
           <section class="py-0 overflow-hidden text-center">
             <div class="row">
               <div class=" col-md-6">
-                <div class="bg-container overlay overlay-dark-40 parallax" data-rellax-percentage="0.5" style='background-image: url("{{img_ciengramos}}")'></div>
+                <div ng-if="img_ciengramos" class="bg-container overlay overlay-dark-40 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_ciengramos}})'}"></div>
                 <div class="container">
                     <div class="row h-100vh align-items-center">
                         <div class="col">
@@ -253,7 +253,7 @@
                 </div>
               </div>
               <div class=" col-md-6">
-                <div class="bg-container overlay overlay-dark-40 parallax" data-rellax-percentage="0.5" style='background-image: url("{{img_apache}}")'></div>
+                <div ng-if="img_apache" class="bg-container overlay overlay-dark-40 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_apache}})'}"></div>
                 <div class="container">
                     <div class="row h-100vh align-items-center">
                         <div class="col">
