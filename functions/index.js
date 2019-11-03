@@ -1129,3 +1129,37 @@ exports.sendMailCiengramos = functions.https.onRequest((request, response) => {
     })
   })
 })
+
+exports.getTermsAndConditions = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('termsAndConditions')
+      .then(function(data){
+        app.storage.getFile(data.guestTermsAndConditions[0])
+        .then(function(file){
+          var terms_file = file.file.replace(" ", "%20");
+          data.guestTermsAndConditions = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+terms_file+'?alt=media';
+          app.storage.getFile(data.guestTermsAndConditionsSpanish[0])
+          .then(function(file){
+            var terms_file = file.file.replace(" ", "%20");
+            data.guestTermsAndConditionsSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+terms_file+'?alt=media';
+            app.storage.getFile(data.webPageTermsAndConditions[0])
+            .then(function(file){
+              var terms_file = file.file.replace(" ", "%20");
+              data.webPageTermsAndConditions = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+terms_file+'?alt=media';
+              app.storage.getFile(data.webPageTermsAndConditionsSpanish[0])
+              .then(function(file){
+                var terms_file = file.file.replace(" ", "%20");
+                data.webPageTermsAndConditionsSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+terms_file+'?alt=media';
+                response.send(data);
+              })
+            })
+          })
+        })
+      })
+      .catch(error => console.log(error))
+  })
+});
