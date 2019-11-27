@@ -21,6 +21,11 @@ app.controller('home', function($scope, $http) {
       route: './rooms.html'
     },
     {
+      name: 'Events',
+      nombre: 'Eventos',
+      route: './events.html'
+    },
+    {
       name: 'Contact',
       nombre: 'Contacto',
       route: './contact.html'
