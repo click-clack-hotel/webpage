@@ -9,28 +9,29 @@ app.controller('events', function($scope, $http) {
   });
   request.then(function (data) {
 
-    $scope.img_events = data.data.image
-    $scope.text_events_bogota = data.data.textEnglish
-    $scope.text_events_bogota_es = data.data.textSpanish
-    $scope.smallText_events_bogota = data.data.smallTextEnglish
-    $scope.smallText_events_bogota_es = data.data.smallTextSpanish
+    $scope.img_events = data.data.image;
+    $scope.text_events_bogota = data.data.textEnglish;
+    $scope.text_events_bogota_es = data.data.textSpanish;
+    $scope.smallText_events_bogota = data.data.smallTextEnglish;
+    $scope.smallText_events_bogota_es = data.data.smallTextSpanish;
 
-    $scope.text_redroom = data.data.redroom.textEnglish
-    $scope.text_redroom_es = data.data.redroom.textSpanish
-    $scope.img_redroom = data.data.redroom.image
+    $scope.text_redroom = data.data.redroom.textEnglish;
+    $scope.text_redroom_es = data.data.redroom.textSpanish;
+    $scope.img_redroom = data.data.redroom.image;
 
-    $scope.text_4xl = data.data.xl.textEnglish
-    $scope.text_4xl_es = data.data.xl.textSpanish
-    $scope.img_4xl = data.data.xl.image
+    $scope.text_4xl = data.data.xl.textEnglish;
+    $scope.text_4xl_es = data.data.xl.textSpanish;
+    $scope.img_4xl = data.data.xl.image;
 
-    $scope.text_park = data.data.clickClackPark.text
-    $scope.text_park_es = data.data.clickClackPark.textSpanish
-    $scope.img_park = data.data.clickClackPark.image
+    $scope.text_park = data.data.clickClackPark.text;
+    $scope.text_park_es = data.data.clickClackPark.textSpanish;
+    $scope.img_park = data.data.clickClackPark.image;
 
-    $scope.text_meetings = data.data.meetingRoom.text
-    $scope.text_meetings_es = data.data.meetingRoom.textSpanish
-    $scope.img_meetings = data.data.meetingRoom.image
+    $scope.text_meetings = data.data.meetingRoom.text;
+    $scope.text_meetings_es = data.data.meetingRoom.textSpanish;
+    $scope.img_meetings = data.data.meetingRoom.image;
   
+    $scope.cultural_agenda = data.data.culturalAgenda;
    
   });
   //EVENTS MED

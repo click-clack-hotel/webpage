@@ -419,16 +419,16 @@ exports.getEventsMedellin = functions.https.onRequest((request, response) => {
                   data.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
                   if (data.culturalAgenda) {
                     data.culturalAgenda.forEach((event, index) => {
-                      event.gallery.forEach(element => {
+                      event.gallery.forEach((element, axios) => {
                         app.storage.getFile(element)
                         .then(function(file){
                           var image_file = file.file.replace(" ", "%20");
-                          event.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                          event.gallery[axios] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                          if(index === data.culturalAgenda.length - 1 && axios === event.gallery.length - 1){
+                            response.send(data);
+                          }
                         }).catch(error => console.log(error))
                       });
-                      if (index === data.culturalAgenda.length-1) {
-                        response.send(data);
-                      }
                     });
                   } else {
                     response.send(data);
