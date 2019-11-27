@@ -112,7 +112,7 @@ app.controller('home', function($scope, $http) {
     },
     {
       id: 'events',
-      visible: false,
+      visible: true,
       route: './events.html',
       name: 'Events',
       nombre: 'Eventos'

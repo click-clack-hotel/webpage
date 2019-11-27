@@ -19,7 +19,7 @@ app.controller('home', function($scope, $http) {
       $scope.whatsapp_es = 'https://api.whatsapp.com/send?phone='+data.data.number+'&text='+data.data.defaultMessageSpanish
     });
   });
-  $scope.vimeoBogota = "https://vimeo.com/90269711"
+  $scope.vimeoBogota = "https://vimeo.com/110068041"
 
 
   $scope.buttons = [

@@ -2,7 +2,7 @@ var app = angular.module('app', []);
 app.controller('events', function($scope, $http) {
 
   $scope.id = 'events';
-  var request = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getEventsBogota")
+  var request = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getEventsMedellin")
   .then(function(response) {
     $scope.data = response;
     return response;
@@ -11,63 +11,26 @@ app.controller('events', function($scope, $http) {
     $scope.img_events = data.data.image
     $scope.text_events_bogota = data.data.textEnglish
     $scope.text_events_bogota_es = data.data.textSpanish
-    $scope.text_concrete = data.data.concretePark.textEnglish
-    $scope.text_concrete_es = data.data.concretePark.textSpanish
-    $scope.img_concrete = data.data.concretePark.image
-    $scope.text_meetings = data.data.meetingsRoom.English
-    $scope.text_meetings_es = data.data.meetingsRoom.textSpanish
-    $scope.img_meetings = data.data.meetingsRoom.image
+    $scope.smallText_events_bogota = data.data.smallTextEnglish
+    $scope.smallText_events_bogota_es = data.data.smallTextSpanish
+    $scope.text_redroom = data.data.redroom.textEnglish
+    $scope.text_redroom_es = data.data.redroom.textSpanish
+    $scope.img_redroom = data.data.redroom.image
+
+    $scope.text_4xl = data.data.xl.textEnglish
+    $scope.text_4xl_es = data.data.xl.textSpanish
+    $scope.img_4xl = data.data.xl.image
+
+    $scope.text_park = data.data.clickClackPark.textEnglish
+    $scope.text_park_es = data.data.clickClackPark.textSpanish
+    $scope.img_park = data.data.clickClackPark.image
+    $scope.text_meetings = data.data.meetingRoom.English
+    $scope.text_meetings_es = data.data.meetingRoom.textSpanish
+    $scope.img_meetings = data.data.meetingRoom.image
   
-    $scope.brunchaholic_title = 'BRUNCHAHOLIC'
-    $scope.brunchaholic_text = "A favourite with locals, our legendary Bogota Brunchaholic is a weekend regular. And we take the term ‘all-you-can-eat ‘ very seriously. With food stations ranging from classic Colombian fare to build-your-own pancakes to pastries to barbecue and more, you’ll barely have room for the bottomless mimosas and whiskey sours. All to the backdrop of tropical house beats from live DJs. From 12pm to 5pm, Saturdays and Sundays."
-    $scope.brunchaholic_text_es = "¿Buscando una excusa perfecta para comer de más y tomar en las mañanas sin remordimiento? Bienvenidos a nuestro Brunch de 11:30am a 4:00pm. Precio: $95.000 + Servicio. Todo al son de DJs Electropicales y de Dancehall."
-    $scope.brunchaholic_hashtag = '#BRUNCHAHOLIC'
-    $scope.brunchaholic_carousel = [
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894647219_1.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894650311_2.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894653092_3.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894656963_4.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894660047_5.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894664949_6.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894667921_7.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894672973_8.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894676971_9.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894680722_10.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894685892_11.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894690971_12.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551894696087_13.png?alt=media'}
-    ]
-  
-    $scope.longshot_title = 'LONGSHOT'
-    $scope.longshot_text = "Ever wish brunch and dinner could just be one single, mimosa-fuelled continuum? So did we. So we made extended brunch a thing. Every month, we bring you Longshot: an all-you-can-eat-all-day-long brunch extravaganza packed with a plethora of different food stations, live performances from top DJs and bands, bottomless mimosas and other drinks, and even some board games for when the food coma hits hard and you need to just sit for half an hour. Pancakes or dancing? Now you can do both! From 12pm to 11pm, one Saturday a month."
-    $scope.longshot_text_es = "Para los que no tuvieron suficiente y quieren más, para los que se rehúsan a: Un sábado al mes se les da gusto en el LONGSHOT, nuestro brunch tardeado de 1:00pm a 7:00pm. Precio: $120.000 + Servicio. Con DJs y presentaciones en vivo de artistas electro tropicales emergentes. En el marco de este evento se han tomado ya el escenario Ácido Pantera, La Payara, Salsa N Groove, Chontadelia y Black Mambo."
-    $scope.longshot_hashtag = '#LONGSHOT'
-    $scope.longshot_carousel = [
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895024942_1.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895027763_2.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895030730_3.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895033489_4.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895036460_6.png?alt=media'}
-    ]
-    $scope.clock_title = 'CLICKCLACKCLOCK'
-    $scope.clock_text = "Every once in a while we transform our hotel into a giant maze, filling entire floors with interactive experiences for one night only. Through this series of game-ified happenings, alongside performances from international DJs and some cracking drinks, we turn back the clock and explore some of the key ideals of the 20th century. Think surreal retro-mania adult obstacle course - with booze and tunes. You can’t really go wrong."
-    $scope.clock_text_es = "The Click Clack Hotel presenta una fiesta que excede la buena música, los mejores tragos y una excelente ambientación. ClickClackClock conceptualiza lo mejor de los ideales de las décadas del siglo XX, en pisos enteros de hotel, en el marco de una fiesta de alta energía junto a DJs internacionales."
-    $scope.clock_hashtag = '#CLICKCLACKCLOCK'
-    $scope.clock_carousel = [
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895198938_1.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895201731_2.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895205117_3.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895207680_4.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895210950_5.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895214038_6.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895216889_7.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895220375_8.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895224070_9.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895227235_10.png?alt=media'},
-      {link:'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1551895230820_11.png?alt=media'}
-    ]
+   
   });
-  //EVENTS BOG
+  //EVENTS MED
   $scope.vimeoEvents = "https://vimeo.com/326691928"
  
 
@@ -141,7 +104,7 @@ app.controller('events', function($scope, $http) {
     },
     {
       id: 'events',
-      visible: false,
+      visible: true,
       route: './events.html',
       name: 'Events',
       nombre: 'Eventos'

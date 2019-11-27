@@ -389,6 +389,59 @@ exports.getEventsBogota = functions.https.onRequest((request, response) => {
   })
 });
 
+exports.getEventsMedellin = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('eventsMed')
+      .then(function(data){    
+        app.storage.getFile(data.redroom.image)
+        .then(function(file){
+          var image_file = file.file.replace(" ", "%20");
+          data.redroom.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
+          app.storage.getFile(data.xl.image)
+          .then(function(file){
+            var image_file = file.file.replace(" ", "%20");
+            data.xl.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
+            app.storage.getFile(data.clickClackPark.image)
+            .then(function(file){
+              var image_file = file.file.replace(" ", "%20");
+              data.clickClackPark.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
+              app.storage.getFile(data.meetingRoom.image)
+              .then(function(file){
+                var image_file = file.file.replace(" ", "%20");
+                data.meetingRoom.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
+                app.storage.getFile(data.image)
+                .then(function(file){
+                  var image_file = file.file.replace(" ", "%20");
+                  data.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
+                  if (data.culturalAgenda) {
+                    data.culturalAgenda.forEach((event, index) => {
+                      event.gallery.forEach(element => {
+                        app.storage.getFile(element)
+                        .then(function(file){
+                          var image_file = file.file.replace(" ", "%20");
+                          event.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                        }).catch(error => console.log(error))
+                      });
+                      if (index === data.culturalAgenda.length-1) {
+                        response.send(data);
+                      }
+                    });
+                  } else {
+                    response.send(data);
+                  }
+                }).catch(error => console.log(error))
+              }).catch(error => console.log(error))
+            }).catch(error => console.log(error))
+          }).catch(error => console.log(error))
+        }).catch(error => console.log(error))
+      }).catch(error => console.log(error))
+  })
+});
+
 exports.getXsMedellin = functions.https.onRequest((request, response) => {
   cors(request,response,()=>{
     response.setHeader('X-Frame-Options', 'ALLOWALL');

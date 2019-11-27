@@ -73,7 +73,7 @@ app.controller('contact', function($scope, $http) {
     },
     {
       id: 'events',
-      visible: false,
+      visible: true,
       route: './events.html',
       name: 'Events',
       nombre: 'Eventos'
