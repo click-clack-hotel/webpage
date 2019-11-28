@@ -1,7 +1,7 @@
 var app = angular.module('app', []);
 app.controller('egeo', function($scope, $http) {
 
-  $scope.id = 'egeo';
+  $scope.id = 'restaurant_and_bar';
   $scope.title_egeo = '';
   $scope.subtitle_egeo = 'Egeo';
 
