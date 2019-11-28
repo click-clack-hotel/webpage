@@ -84,8 +84,15 @@ app.controller('specials', function($scope, $http) {
       nombre: 'Restaurante y bar'
     },
     {
+      id: 'la_cometa',
+      visible: true,
+      route: './la_cometa.html',
+      name: 'La Cometa Gallery',
+      nombre: 'Galeria La Cometa'
+  },
+    {
       id: 'events',
-      visible: false,
+      visible: true,
       route: './events.html',
       name: 'Events',
       nombre: 'Eventos'

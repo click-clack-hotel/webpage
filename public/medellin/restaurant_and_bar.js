@@ -1,20 +1,41 @@
 var app = angular.module('app', []);
-app.controller('rooms', function($scope, $http) {
+app.controller('restaurant_and_bar', function($scope, $http) {
 
-  $scope.id = 'rooms';
-  var request = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getRoomsMedellin")
+  $scope.id = 'restaurant_and_bar';
+  var request = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getBigBaos")
   .then(function(response) {
     $scope.data = response;
     return response;
   });
   request.then(function (data) {
-    $scope.img_xs = data.data.xs;
-    $scope.img_s = data.data.s;
-    $scope.img_m = data.data.m;
-    $scope.img_l = data.data.l;
-    $scope.img_xl = data.data.xl;
-    $scope.img_2xl = data.data.xxl;
-    $scope.img_3xl = data.data.xxxl;
+    $scope.img_xs = data.data.background.link;
+  });
+
+  var request2 = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getClickClackKitchen")
+  .then(function(response) {
+    $scope.data = response;
+    return response;
+  });
+  request2.then(function (data) {
+    $scope.img_s = data.data.background.link;
+  });
+
+  var request3 = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getEgeo")
+  .then(function(response) {
+    $scope.data = response;
+    return response;
+  });
+  request3.then(function (data) {
+    $scope.img_m = data.data.background.link;
+  });
+
+  var request4 = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getMekong")
+  .then(function(response) {
+    $scope.data = response;
+    return response;
+  });
+  request4.then(function (data) {
+    $scope.img_l = data.data.background.link;
   });
 
   // Language
@@ -83,18 +104,18 @@ app.controller('rooms', function($scope, $http) {
     },
     {
       id: 'restaurant_and_bar',
-      visible: false,
+      visible: true,
       route: './restaurant_and_bar.html',
       name: 'Restaurant and bar',
       nombre: 'Restaurante y bar'
     },
     {
-      id: 'la_cometa',
-      visible: true,
-      route: './la_cometa.html',
-      name: 'La Cometa Gallery',
-      nombre: 'Galeria La Cometa'
-  },
+        id: 'la_cometa',
+        visible: true,
+        route: './la_cometa.html',
+        name: 'La Cometa Gallery',
+        nombre: 'Galeria La Cometa'
+    },
     {
       id: 'events',
       visible: true,
@@ -127,16 +148,18 @@ app.controller('rooms', function($scope, $http) {
 
   //Booking Form
   $scope.today = getToday()
-  $scope.tomorrow = getTomorrow(new Date())  
-  $scope.synxis='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=en-US&rooms=1&sbe_ri=0'
-  $scope.synxis_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=es-ES&rooms=1&sbe_ri=0'
-  $scope.modify = 'https://be.synxis.com/signIn?adult=1&arrive=2019-10-10&chain=19511&child=0&currency=COP&depart=2019-10-11&hotel=70051&level=hotel&locale=en-US&rooms=1&start=availresults'
+  $scope.tomorrow = getTomorrow(new Date())
+  $scope.synxis = 'https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=70051&level=hotel&locale=en-US&restaurant_and_bar=1&sbe_ri=0&start=availresults'
+  $scope.synxis_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=70051&level=hotel&locale=es-ES&restaurant_and_bar=1&sbe_ri=0&start=availresults'
+  $scope.synxis_med='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=en-US&restaurant_and_bar=1&sbe_ri=0'
+  $scope.synxis_med_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=es-ES&restaurant_and_bar=1&sbe_ri=0'
+  $scope.modify = 'https://be.synxis.com/signIn?adult=1&arrive=2019-10-10&chain=19511&child=0&currency=COP&depart=2019-10-11&hotel=70051&level=hotel&locale=en-US&restaurant_and_bar=1&start=availresults'
   $scope.changeHandler = function() {
     $scope.tomorrow = getTomorrow($scope.in)
-    $scope.synxis = 'https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=70051&level=hotel&locale=en-US&rooms=1&sbe_ri=0&start=availresults'
-    $scope.synxis_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=70051&level=hotel&locale=es-ES&rooms=1&sbe_ri=0&start=availresults'
-    $scope.synxis='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=en-US&rooms=1&sbe_ri=0'
-    $scope.synxis_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=es-ES&rooms=1&sbe_ri=0'
+    $scope.synxis = 'https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=70051&level=hotel&locale=en-US&restaurant_and_bar=1&sbe_ri=0&start=availresults'
+    $scope.synxis_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=70051&level=hotel&locale=es-ES&restaurant_and_bar=1&sbe_ri=0&start=availresults'
+    $scope.synxis_med='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=en-US&restaurant_and_bar=1&sbe_ri=0'
+    $scope.synxis_med_es='https://be.synxis.com/?adult='+$scope.guests+'&arrive='+$scope.in+'&chain=19511&child=0&currency=COP&depart='+$scope.out+'&hotel=6298&level=hotel&locale=es-ES&restaurant_and_bar=1&sbe_ri=0'
   };  
   function getToday(){
     var currentDate = new Date();

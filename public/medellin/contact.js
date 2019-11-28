@@ -66,11 +66,18 @@ app.controller('contact', function($scope, $http) {
     },
     {
       id: 'restaurant_and_bar',
-      visible: false,
+      visible: true,
       route: './restaurant_and_bar.html',
       name: 'Restaurant and bar',
       nombre: 'Restaurante y bar'
     },
+    {
+      id: 'la_cometa',
+      visible: true,
+      route: './la_cometa.html',
+      name: 'La Cometa Gallery',
+      nombre: 'Galeria La Cometa'
+  },
     {
       id: 'events',
       visible: true,

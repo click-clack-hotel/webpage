@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Page Title -->
+    <title>Medellín | La Cometa Gallery</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1553641315663_favicon.png?alt=media&token=ee05ece6-7242-44cc-8d76-f223a95c3d65" type="image/x-icon">
+
+    <!-- Vendor Stylesheets -->
+    <link href="../../assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/aos/dist/aos.css" rel="stylesheet">
+    <link href="../../assets/vendor/jquery.mb.vimeo_player/dist/css/jquery.mb.vimeo_player.min.css" rel="stylesheet">
+
+    <!-- Theme Stylesheets -->
+    <!-- <link href="../../dist/css/theme.min.css" rel="stylesheet"> -->
+    <link href="../../assets/css/theme.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Controller -->
+    <script src="./la_cometa.js"></script>
+  </head>
+
+  <body class="bg-primary">
+    
+    <div ng-app="app" ng-controller="la_cometa">
+
+      <!-- Preloader -->
+      <div class="preloader">
+        <div class="cardcontainer">
+          <div class="spinner">
+            <img src="../../assets/img/kk.png" width="150">
+          </div>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header>
+        <!-- Navbar -->
+        <div class="d-none d-lg-block d-xl-block">
+          <div class="spyre-navbar navbar navbar-expand-lg bg-primary fixed-top align-items-center " data-transparent data-text-color="#ffffff">
+            <div class="container">
+              <!-- WhatsApp -->
+              <a ng-if="english" title="Get in touch!" target="_blank" href={{whatsapp}} class="btn btn-secondary px-3 whatsapp">
+                <i class="fab fa-2x fa-whatsapp"></i>
+              </a>
+              <a ng-if="spanish" title="Ponte en contacto!" target="_blank" href={{whatsapp_es}} class="btn btn-secondary px-3 whatsapp">
+                <i class="fab fa-2x fa-whatsapp"></i>
+              </a>
+              <!-- Brand -->
+              <a class="navbar-brand mr-lg-5 mr-xl-6" href="../../index.html">
+                <img src="../../assets/img/logo-light.png" class="d-none d-lg-block" alt="Click Clack Hotel" width="140" />
+              </a>
+              <!-- Booking -->
+              <span class="navbar-text flex-fill d-none d-lg-inline-block text-500 text-uppercase">
+                <br>
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <input
+                        type="date" 
+                        class="form-c" 
+                        id="check-in" 
+                        value={{today}} 
+                        ng-model='in' 
+                        ng-change="changeHandler()" 
+                        placeholder="mm/dd/yyyy" 
+                        title="Check-in">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <input
+                        type="date" 
+                        class="form-c" 
+                        id="check-out" 
+                        value={{tomorrow}} 
+                        ng-model='out'
+                        ng-change="changeHandler()"
+                        placeholder="mm/dd/yyyy"
+                        title="Check-out">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="form-group">
+                        <input ng-if="english"
+                        type="number"
+                        min="1"
+                        class="form-c"
+                        id="guests"
+                        ng-model='guests'
+                        ng-change="changeHandler()"
+                        placeholder="GUESTS"
+                        title="Number of guests">
+                        <input ng-if="spanish"
+                        type="number"
+                        min="1"
+                        class="form-c"
+                        id="guests"
+                        ng-model='guests'
+                        ng-change="changeHandler()"
+                        placeholder="HUESPEDES"
+                        title="Numero de huespedes">
+                      </div>
+                    </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <a ng-if="english" class="btn btn-block btn-sm btn-secondary my-2 my-sm-0" href={{synxis}}>BOOK NOW</a>
+                      <a ng-if="spanish" class="btn btn-block btn-sm btn-secondary my-2 my-sm-0" href={{synxis_es}}>RESERVAR</a>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <a ng-if="english" class="btn btn-block btn-sm btn-outline-light my-2 my-sm-0" href={{modify}}>MODIFY BOOKING</a>
+                    <a ng-if="spanish" class="btn btn-block btn-sm btn-outline-light my-2 my-sm-0" href={{modify}}>MODIFICAR RESERVA</a>
+                  </div>
+                </div>
+              </span>
+              <!-- Menu Toggle -->
+              <div class="menu-toggle" title="Menu">
+                <div class="hamburger my-2 my-sm-0 mx-0">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="cross my-2 my-sm-0 mx-0">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+                            <!-- Language -->
+              <div>
+                <a ng-if="english" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="Español">ES</a>
+                <a ng-if="spanish" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="English">EN</a>
+              </div>
+              <!-- Logout -->
+              <div>
+                <a ng-if="english" class="btn btn-sm btn-outline-light" href="../../index.html" title="Back to landing"><i class="fas fa-sign-out-alt"></i></a>
+                <a ng-if="spanish" class="btn btn-sm btn-outline-light" href="../../index.html" title="Volver al landing"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+              <!-- Sidebar Menu-->
+              <div class="spyre-navbar-overlay overlay-slide">
+                <div class="container ">
+                  <div class="row">
+                    <div class="spyre-navbar-nav-container text-white menu-sidebar">
+                      <nav class="spyre-navbar-nav open">
+                        <ul ng-if="english" class="spyre-nav" style="margin-top: 20px;">
+                          <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.name}}</a></li>
+                          <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terms</a></li>
+                        </ul>
+                        <ul ng-if="spanish" class="spyre-nav" style="margin-top: 20px;">
+                          <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.nombre}}</a></li>
+                          <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terminos</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Navbar -->
+
+        <!-- Mobile Menu -->
+        <div class="d-lg-none d-xl-none">
+          <!-- WhatsApp -->
+          <a ng-if="english" title="Get in touch!" target="_blank" href={{whatsapp}} class="btn btn-secondary px-3 whatsapp">
+            <i class="fab fa-2x fa-whatsapp"></i>
+          </a>
+          <a ng-if="spanish" title="Ponte en contacto!" target="_blank" href={{whatsapp_es}} class="btn btn-secondary px-3 whatsapp">
+            <i class="fab fa-2x fa-whatsapp"></i>
+          </a>
+          <!-- Navbar -->
+          <div class="spyre-navbar navbar bg-primary fixed-top align-items-center" data-transparent data-text-color="#ffffff">
+            <div class="container-fluid">
+              <!-- Menu Toggle -->
+              <div class="menu-toggle mx-">
+                  <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="cross">
+                    <span></span>
+                    <span></span>
+                  </div>
+              </div>
+              <!-- Brand -->
+              <div class="align-items-center text-center navbar-text flex-fill text-500 text-uppercase">
+                <a href="../../index.html">
+                  <img src="../../assets/img/logo-light.png" width="110" alt="Click Clack Hotel" />
+                </a>
+              </div>
+              <!-- Logout -->
+              <div>
+                <a class="btn btn-sm btn-outline-light" href="../../index.html" title="Back to landing"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+            </div>
+            <!-- Menu -->
+            <div class="spyre-navbar-overlay overlay-slide ">
+              <div class="container ">
+                <div class="row">
+                  <div class="spyre-navbar-nav-container col-lg-3 col-xl-3 bg-dark text-white ext-l ">
+                    <nav class="spyre-navbar-nav menu-mobile-layout">
+                      <ul ng-if="english" class="spyre-nav">
+                        <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.name}}</a></li>
+                        <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terms</a></li>
+                      </ul>
+                      <ul ng-if="spanish" class="spyre-nav">
+                        <li ng-repeat="item in menu" ng-if="item.visible" class="spyre-nav-item"><a href="{{item.route}}" class="spyre-nav-link" ng-class="{active: id === item.id }">{{item.nombre}}</a></li>
+                        <li class="spyre-nav-item"><a target="_blank" href={{terms}} class="spyre-nav-link">Terminos</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Mobile Menu -->
+      </header>
+      <!-- End of Header -->
+
+      <main class="main minh-100vh bg-primary">
+          <!-- Section -->
+
+          <section class="py-0 overflow-hidden text-center">
+              <div ng-if="img_la_cometa" class="bg-container overlay varlay-dark-50 parallax" data-rellax-percentage="0.5"  ng-style="{'background-image':'url({{img_la_cometa}})'}"></div>
+              <div class="container">
+                  <div class="row h-100vh align-items-center">
+                      <div class="col">
+                         <h1 class="text-white text-uppercase fs-4 fs-lg-6" >la cometa</h1>
+                      </div>
+                  </div>
+              </div>
+              <div class="move">
+                  <a href="#section-2" data-smooth-scroll data-smooth-scroll-hash="false">
+                      <i class="zmdi zmdi-long-arrow-down zmdi-hc-4x text-white"></i>
+                  </a>
+              </div>
+              <!-- <div class="slides-navigation"><a class="next" href="./apache.html"><i class="fas fa-chevron-right"></i></a></div> -->
+          </section>
+          <!-- End of Section -->
+
+          <!-- Section -->
+
+          <!-- End of Section -->
+
+          <!-- Section -->
+          <section class="py-0 pb-0" id="section-2">
+              <div class="container-fluid px-0">
+
+                  <div class="row no-gutters">
+                    <div class="col-md-6 py-4">
+                      <br><br>
+
+
+                      <div id="carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div ng-repeat="i in carousel_la_cometa_med" ng-class="{active:!$index}" class="carousel-item">
+                            <img class="d-block w-100" src="{{ i.link }}" alt="First slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+
+
+
+                    </div>
+                      <div class="col-md-6 py-6 py-lg-8 bg-primary overflow-hidden">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9">
+                              <div class="row justify-content-center text-justify">
+                                <div class="row container">
+                                    <div class="col-md-12 ">
+                                        <h3 ng-if="spanish" class="my-0 fs-1 fw-medium text-secondary text-uppercase">{{title_la_cometa}}</h3>
+                                        <h2 ng-if="spanish" class="mb-4 fw-medium text-white text-uppercase">{{subtitle_la_cometa}}</h2>
+                                        <h3 ng-if="english" class="my-0 fs-1 fw-medium text-secondary text-uppercase">{{subtitle_la_cometa}}</h3>
+                                        <h2 ng-if="english" class="mb-4 fw-medium text-white text-uppercase">Gallery</h2>
+                                        <p ng-if="english" class="text-justify text-500 text-click">{{text_la_cometa_med}}</p>
+                                        <p ng-if="spanish" class="text-justify text-500 text-click">{{text_la_cometa_med_es}}</p>
+                                        <p ng-if="english" class="text-justify text-light text-click"><small>{{text_info_la_cometa_med}}</small></p>
+                                        <p ng-if="spanish" class="text-justify text-light text-click"><small>{{text_info_la_cometa_med_es}}</small></p>
+                                        <!-- <div  class="text-center">
+                                          <a ng-if="english" href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">BOOK</a>
+                                          <a ng-if="spanish" href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">RESERVAR</a>
+                                        </div> -->
+                                    </div>
+
+                                </div>
+                              </div>
+                              <br>
+                              <div class="row justify-content-left">
+                                <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog " role="document">
+                                    <div class="modal-content bg-primary">
+                                      <div class="modal-header text-center">
+                                        <h4 ng-if="english" class="modal-title text-secondary w-100">la cometa BOOKING</h4>
+                                        <h4 ng-if="spanish" class="modal-title text-secondary w-100">RESERVAS la_cometa</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body mx-3">
+                                        <div class="md-form mb-3">
+                                          <input ng-if="english" type="text" id="name" class="form-c form-control-sm validate" ng-model='name' placeholder="Full name">
+                                          <input ng-if="spanish" type="text" id="name" class="form-c form-control-sm validate" ng-model='name' placeholder="Nombre completo">
+                                        </div>
+                                        <div class="md-form mb-3">
+                                          <input ng-if="english" type="number" min="1" id="persons" class="form-c form-control-sm validate" ng-model='numberPersons' placeholder="Number of persons">
+                                          <input ng-if="spanish" type="number" min="1" id="persons" class="form-c form-control-sm validate" ng-model='numberPersons' placeholder="Numero de personas">
+                                        </div>
+                                        <div class="md-form mb-3">
+                                          <input type="date" id="date" class="form-c form-control-sm validate" ng-model='date' value="{{today}}">
+                                        </div>
+                                        <div class="md-form mb-3 text-center">
+                                          <input ng-if="english" type="time" min="07:00" max="21:00" value="07:00" step="600" id="hour" class="form-c form-control-sm validate" ng-model='hour' placeholder="Hour">
+                                          <label ng-if="english" class="text-white"style="font-size:9px">*Your reservation will be maintained for 15 minutes. Once this time has elapsed, it is tied to availability.</label>
+                                          <input ng-if="spanish" type="time" min="07:00" max="21:00" value="07:00" step="600" id="hour" class="form-c form-control-sm validate" ng-model='hour' placeholder="Hora">
+                                          <label ng-if="spanish" class="text-white"style="font-size:9px">*Tu reserva se mantendrá durante 15 minutos. Una vez pasado este tiempo queda atada a disponibilidad.</label>
+
+                                        </div>
+                                        <div class="md-form mb-3">
+                                          <input ng-if="english" type="number" id="persons" class="form-c form-control-sm validate" ng-model='phone' placeholder="Phone number">
+                                          <input ng-if="spanish" type="number" id="persons" class="form-c form-control-sm validate" ng-model='phone' placeholder="Número celular">
+                                        </div>
+                                        <div class="md-form mb-3">
+                                          <input ng-if="english" type="email" id="email" class="form-c form-control-sm validate" ng-model='clientMail' placeholder="Email">
+                                          <input ng-if="spanish" type="email" id="email" class="form-c form-control-sm validate" ng-model='clientMail' placeholder="Correo electrónico">
+                                        </div>
+                                        <div class="form-group">
+                                          <label ng-if="english" class="text-white" for="exampleFormControlTextarea1" style="font-size:14px">Additional information</label>
+                                          <label ng-if="spanish" class="text-white" for="exampleFormControlTextarea1" style="font-size:14px">Información adiconal</label>
+                                          <textarea class="form-c form-control-sm" id="exampleFormControlTextarea1" rows="3" ng-model='message' ></textarea>
+                                        </div>
+                                      </div>
+
+                                      <div class="modal-footer bg-primary d-flex justify-content-center">
+                                        <div class="form-check text-center" style="font-size:10px">
+                                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                          <label ng-if="english" class="form-check-label text-white" for="exampleCheck1" >Accept <a class="text-secondary" target="_blank" href={{terms}><strong>terms and conditions</strong></a> </label>
+                                          <label ng-if="spanish" class="form-check-label text-white" for="exampleCheck1" >Acepto <a class="text-secondary" target="_blank" href={{terms}><strong>terminos y condiciones</strong></a> </label>
+                                          <br><br>
+                                          <button ng-if="english" class="btn btn-sm btn-outline-light btn-block" ng-click="sendMail()" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">SEND</button>
+                                          <button ng-if="spanish" class="btn btn-sm btn-outline-light btn-block" ng-click="sendMail()" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">ENVIAR</button>
+                                        </div>
+                                        <br><br>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog " role="document">
+                                    <div class="modal-content bg-primary">
+                                      <div class="modal-header text-center">
+                                        <h4 ng-if="english" class="modal-title text-secondary w-100">la_cometa BOOKING</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body mx-3">
+                                        <h6 ng-if="english" class="text-white">We have received your reservation, we will contact you shortly!</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          
+      </main>
+
+    </div>
+
+    <!-- Footer -->
+    <iframe src="./footer.html" class="footer-frame"></iframe>
+
+    <!-- Core Javascripts -->
+    <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Vendor Javascripts -->
+    <script src="../../assets/vendor/rellax/rellax.min.js"></script>
+    <script src="../../assets/vendor/typed.js/lib/typed.min.js"></script>
+    <script src="../../assets/vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../../assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="../../assets/vendor/aos/dist/aos.js"></script>
+    <script src="../../assets/vendor/jquery.mb.vimeo_player/dist/jquery.mb.vimeo_player.min.js"></script>
+
+    <!-- Theme Javascripts -->
+    <script src="../../dist/js/theme.min.js"></script>
+    <script src="../../assets/js/custom/jquery-3.2.1.min.js"></script>
+    <script src="../../assets/js/custom/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom/plugins.min.js"></script>
+    <script src="../../assets/js/custom/custom.min.js"></script>
+  </body>
+</html>

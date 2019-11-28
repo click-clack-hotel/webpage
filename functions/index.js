@@ -282,6 +282,198 @@ exports.getCiengramos = functions.https.onRequest((request, response) => {
   })
 });
 
+exports.getBigBaos = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('bigBaos')
+    .then(function(data){
+      if (data.gallery.length > 0 && data.background.length > 0) {
+          app.storage.getFile(data.background[0])
+          .then(function(file){
+            var image_file = file.file.replace(" ", "%20");
+            data.background = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+            data.gallery.forEach((element, index) => {
+              app.storage.getFile(element)
+              .then(function(file){
+                var image_file = file.file.replace(" ", "%20");
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                if (index === data.gallery.length-1) {
+                  response.send(data);
+                }
+              }).catch(error => console.log(error))
+            });
+          });
+      } else {
+        response.send(data);
+      }
+    })
+    .catch(error => console.log(error))
+  })
+});
+
+exports.getClickClackKitchen = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('clickClackKitchen')
+      .then(function(data){
+        if (data.gallery.length > 0 && data.background.length > 0) {
+            app.storage.getFile(data.background[0])
+            .then(function(file){
+              var image_file = file.file.replace(" ", "%20");
+              data.background = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+              data.gallery.forEach((element, index) => {
+                app.storage.getFile(element)
+                .then(function(file){
+                  var image_file = file.file.replace(" ", "%20");
+                  data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                  if (index === data.gallery.length-1) {
+                    response.send(data);
+                  }
+                }).catch(error => console.log(error))
+              });
+            });
+        } else {
+          response.send(data);
+        }
+      })
+      .catch(error => console.log(error))
+  })
+});
+
+exports.getEgeo = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('egeo')
+    .then(function(data){
+      if (data.gallery.length > 0 && data.background.length > 0) {
+          app.storage.getFile(data.background[0])
+          .then(function(file){
+            var image_file = file.file.replace(" ", "%20");
+            data.background = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+            data.gallery.forEach((element, index) => {
+              app.storage.getFile(element)
+              .then(function(file){
+                var image_file = file.file.replace(" ", "%20");
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                if (index === data.gallery.length-1) {
+                  response.send(data);
+                }
+              }).catch(error => console.log(error))
+            });
+          });
+      } else {
+        response.send(data);
+      }
+    })
+    .catch(error => console.log(error))
+  })
+});
+
+exports.getLaCometa = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('laCometa')
+    .then(function(data){
+      if (data.gallery.length > 0 && data.background.length > 0) {
+          app.storage.getFile(data.background[0])
+          .then(function(file){
+            var image_file = file.file.replace(" ", "%20");
+            data.background = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+            data.gallery.forEach((element, index) => {
+              app.storage.getFile(element)
+              .then(function(file){
+                var image_file = file.file.replace(" ", "%20");
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                if (index === data.gallery.length-1) {
+                  response.send(data);
+                }
+              }).catch(error => console.log(error))
+            });
+          });
+      } else {
+        response.send(data);
+      }
+    })
+    .catch(error => console.log(error))
+  })
+});
+
+exports.getLaDeriva = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('laDeriva')
+    .then(function(data){
+      if (data.gallery.length > 0 && data.background.length > 0) {
+          app.storage.getFile(data.background[0])
+          .then(function(file){
+            var image_file = file.file.replace(" ", "%20");
+            data.background = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+            data.gallery.forEach((element, index) => {
+              app.storage.getFile(element)
+              .then(function(file){
+                var image_file = file.file.replace(" ", "%20");
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                if (index === data.gallery.length-1) {
+                  response.send(data);
+                }
+              }).catch(error => console.log(error))
+            });
+          });
+      } else {
+        response.send(data);
+      }
+    })
+    .catch(error => console.log(error))
+  })
+});
+
+exports.getMekong = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('mekong')
+    .then(function(data){
+      if (data.gallery.length > 0 && data.background.length > 0) {
+          app.storage.getFile(data.background[0])
+          .then(function(file){
+            var image_file = file.file.replace(" ", "%20");
+            data.background = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+            data.gallery.forEach((element, index) => {
+              app.storage.getFile(element)
+              .then(function(file){
+                var image_file = file.file.replace(" ", "%20");
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                if (index === data.gallery.length-1) {
+                  response.send(data);
+                }
+              }).catch(error => console.log(error))
+            });
+          });
+      } else {
+        response.send(data);
+      }
+    })
+    .catch(error => console.log(error))
+  })
+});
+
 exports.getApache = functions.https.onRequest((request, response) => {
   cors(request,response,()=>{
     response.setHeader('X-Frame-Options', 'ALLOWALL');
