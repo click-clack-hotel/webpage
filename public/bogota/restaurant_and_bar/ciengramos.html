@@ -138,7 +138,7 @@
                   <span></span>
                 </div>
               </div>
-                            <!-- Language -->
+              <!-- Language -->
               <div>
                 <a ng-if="english" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="Español">ES</a>
                 <a ng-if="spanish" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="English">EN</a>
@@ -299,9 +299,10 @@
                                         <p ng-if="english" class="text-justify text-light text-click"><small>{{text_info_ciengramos_bog}}</small></p>
                                         <p ng-if="spanish" class="text-justify text-light text-click"><small>{{text_info_ciengramos_bog_es}}</small></p>
                                         <div class="text-center">
-                                          <a ng-if="english" href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">BOOK</a>
-                                          <a ng-if="spanish" href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">RESERVAR</a>
-
+                                          <a ng-if="english && menu && menu.length !== 1" href={{menu}} target="_blank" class="btn btn-outline-secondary px-5" style="margin-right: 10px;">MENU</a>
+                                          <a ng-if="spanish && menu_es && menu_es.length !== 1" href={{menu_es}} target="_blank" class="btn btn-outline-secondary px-5" style="margin-right: 10px;">MENÚ</a>
+                                          <a ng-if="english" href="" class="btn btn-outline-light px-5" data-toggle="modal" data-target="#booking">BOOK</a>
+                                          <a ng-if="spanish" href="" class="btn btn-outline-light px-5" data-toggle="modal" data-target="#booking">RESERVAR</a>
                                         </div>
                                     </div>
 

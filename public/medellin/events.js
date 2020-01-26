@@ -32,6 +32,9 @@ app.controller('events', function($scope, $http) {
     $scope.img_meetings = data.data.meetingRoom.image;
   
     $scope.cultural_agenda = data.data.culturalAgenda;
+
+    $scope.eventsBrochureEnglish = data.data.eventsBrochureEnglish
+    $scope.eventsBrochureSpanish = data.data.eventsBrochureSpanish
    
   });
   //EVENTS MED
@@ -203,7 +206,7 @@ app.controller('events', function($scope, $http) {
     }
     var req = {
      method: 'POST',
-     url: 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailEvents',
+     url: 'https://us-central1-click-clack-5db9f.cloudfunctions.net/sendMailEventsMedellin',
      headers: {
        'Content-Type': 'application/json',
        'Access-Control-Allow-Origin': '*'

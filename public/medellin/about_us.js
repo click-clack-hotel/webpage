@@ -12,6 +12,8 @@ app.controller('about_us', function($scope, $http) {
     $scope.text_es = data.data.textSpanish;
     $scope.carousel = data.data.gallery;
     $scope.img = data.data.background;
+    $scope.press_kit = data.data.pressKit;
+    $scope.press_kit_es = data.data.pressKitSpanish;
   });
 
   // Language

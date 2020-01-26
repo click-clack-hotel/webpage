@@ -275,7 +275,6 @@
                       </div>
                     </div>
                       <div class="col-md-6 py-6 py-lg-8 bg-primary  overflow-hidden">
-
                           <div class="row justify-content-center ">
                               <div class="col-md-9 ">
                                 <div class="row justify-content-center  text-justify">
@@ -286,6 +285,10 @@
                                           <h2 class="mb-4 fw-medium text-white text-uppercase">CLICK CLACK</h2>
                                           <p ng-if="english" class="text-500 text-click">{{text}}</p>
                                           <p ng-if="spanish" class="text-500 text-click">{{text_es}}</p>
+                                          <div style="text-align: center !important;">
+                                            <a ng-if="english && press_kit && press_kit.length !== 1" href={{press_kit}} target="_blank" class="btn btn-outline-light px-6">PRESS KIT</a>
+                                            <a ng-if="spanish && press_kit_es && press_kit_es.length !== 1" href={{press_kit_es}} target="_blank" class="btn btn-outline-light px-6">PRESS KIT</a>
+                                          </div>
                                       </div>
                                   </div>
                                 </div>

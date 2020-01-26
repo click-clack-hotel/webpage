@@ -138,6 +138,11 @@
                   <span></span>
                 </div>
               </div>
+              <!-- Language -->
+              <div>
+                <a ng-if="english" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="Español">ES</a>
+                <a ng-if="spanish" class="btn btn-sm btn-outline-light" style="color: white; margin-right: 1vw;" ng-click="changeLanguage()" title="English">EN</a>
+              </div>
               <!-- Logout -->
               <div>
                 <a ng-if="english" class="btn btn-sm btn-outline-light" href="../../index.html" title="Back to landing"><i class="fas fa-sign-out-alt"></i></a>
@@ -236,7 +241,7 @@
           <!-- Section -->
 
           <section class="py-0 overflow-hidden text-center">
-              <div ng-if="img_apaches" class="bg-container overlay varlay-dark-50 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_apache}})'}"></div>
+              <div ng-if="img_apache" class="bg-container overlay varlay-dark-50 parallax" data-rellax-percentage="0.5" ng-style="{'background-image':'url({{img_apache}})'}"></div>
               <div class="container">
                   <div class="row h-100vh align-items-center">
                       <div class="col">
@@ -288,6 +293,10 @@
                                         <p ng-if="english" class="text-justify text-500 text-click"><small>{{text_info_apache_bog}}</small></p>
                                         <p ng-if="spanish" class="text-justify text-500 text-click">{{text_apache_bog_es}}</p>
                                         <p ng-if="spanish" class="text-justify text-500 text-click"><small>{{text_info_apache_bog_es}}</small></p>
+                                        <div class="text-center">
+                                          <a ng-if="english && menu && menu.length !== 1" href={{menu}} target="_blank" class="btn btn-outline-secondary px-6">MENU</a>
+                                          <a ng-if="spanish && menu_es && menu_es.length !== 1" href={{menu_es}} target="_blank" class="btn btn-outline-secondary px-6">MENÚ</a>
+                                        </div>
                                     </div>
                                 </div>
                               </div>

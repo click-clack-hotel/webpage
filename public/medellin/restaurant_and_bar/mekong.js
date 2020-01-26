@@ -11,15 +11,14 @@ app.controller('mekong', function($scope, $http) {
     return response;
   });
   request_2.then(function (data) {
-      console.log(data.data);
-      
     $scope.text_mekong_med = data.data.textEnglish;
     $scope.text_mekong_med_es = data.data.textSpanish;
     $scope.text_info_mekong_med = data.data.smallTextEnglish;
     $scope.text_info_mekong_med_es = data.data.smallTextSpanish;
     $scope.carousel_mekong_med = data.data.gallery;
     $scope.img_mekong = data.data.background.link;
-    
+    $scope.menu = data.data.menu;
+    $scope.menu_es = data.data.menuSpanish;
   });
 
   var request = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getBigBaos")

@@ -137,7 +137,21 @@ exports.getAboutMedellin = functions.https.onRequest((request, response) => {
                 var image_file = file.file.replace(" ", "%20");
                 data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
-                  response.send(data);
+                  if (data.pressKit && data.pressKitSpanish) {
+                    app.storage.getFile(data.pressKit[0])
+                    .then(function(file){
+                      var press_kit = file.file.replace(" ", "%20");
+                      data.pressKit = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+press_kit+'?alt=media';
+                      app.storage.getFile(data.pressKitSpanish[0])
+                      .then(function(file){
+                        var press_kit_es = file.file.replace(" ", "%20");
+                        data.pressKitSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+press_kit_es+'?alt=media';
+                        response.send(data);
+                      });
+                    });
+                  } else {
+                    response.send(data);
+                  }
                 }
               }).catch(error => console.log(error))
             });
@@ -270,7 +284,21 @@ exports.getCiengramos = functions.https.onRequest((request, response) => {
               var image_file = file.file.replace(" ", "%20");
               data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
-                response.send(data);
+                if (data.menu && data.menuSpanish) {
+                  app.storage.getFile(data.menu[0])
+                  .then(function(file){
+                    var menu = file.file.replace(" ", "%20");
+                    data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                    app.storage.getFile(data.menuSpanish[0])
+                    .then(function(file){
+                      var menuSpanish = file.file.replace(" ", "%20");
+                      data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                      response.send(data);
+                    });
+                  });
+                } else {
+                  response.send(data);
+                }
               }
             }).catch(error => console.log(error))
           });
@@ -301,7 +329,21 @@ exports.getBigBaos = functions.https.onRequest((request, response) => {
                 var image_file = file.file.replace(" ", "%20");
                 data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
-                  response.send(data);
+                  if (data.menu && data.menuSpanish) {
+                    app.storage.getFile(data.menu[0])
+                    .then(function(file){
+                      var menu = file.file.replace(" ", "%20");
+                      data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                      app.storage.getFile(data.menuSpanish[0])
+                      .then(function(file){
+                        var menuSpanish = file.file.replace(" ", "%20");
+                        data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                        response.send(data);
+                      });
+                    });
+                  } else {
+                    response.send(data);
+                  }
                 }
               }).catch(error => console.log(error))
             });
@@ -333,7 +375,21 @@ exports.getClickClackKitchen = functions.https.onRequest((request, response) => 
                   var image_file = file.file.replace(" ", "%20");
                   data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                   if (index === data.gallery.length-1) {
-                    response.send(data);
+                    if (data.menu && data.menuSpanish) {
+                      app.storage.getFile(data.menu[0])
+                      .then(function(file){
+                        var menu = file.file.replace(" ", "%20");
+                        data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                        app.storage.getFile(data.menuSpanish[0])
+                        .then(function(file){
+                          var menuSpanish = file.file.replace(" ", "%20");
+                          data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                          response.send(data);
+                        });
+                      });
+                    } else {
+                      response.send(data);
+                    }
                   }
                 }).catch(error => console.log(error))
               });
@@ -365,7 +421,21 @@ exports.getEgeo = functions.https.onRequest((request, response) => {
                 var image_file = file.file.replace(" ", "%20");
                 data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
-                  response.send(data);
+                  if (data.menu && data.menuSpanish) {
+                    app.storage.getFile(data.menu[0])
+                    .then(function(file){
+                      var menu = file.file.replace(" ", "%20");
+                      data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                      app.storage.getFile(data.menuSpanish[0])
+                      .then(function(file){
+                        var menuSpanish = file.file.replace(" ", "%20");
+                        data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                        response.send(data);
+                      });
+                    });
+                  } else {
+                    response.send(data);
+                  }
                 }
               }).catch(error => console.log(error))
             });
@@ -429,7 +499,21 @@ exports.getLaDeriva = functions.https.onRequest((request, response) => {
                 var image_file = file.file.replace(" ", "%20");
                 data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
-                  response.send(data);
+                  if (data.menu && data.menuSpanish) {
+                    app.storage.getFile(data.menu[0])
+                    .then(function(file){
+                      var menu = file.file.replace(" ", "%20");
+                      data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                      app.storage.getFile(data.menuSpanish[0])
+                      .then(function(file){
+                        var menuSpanish = file.file.replace(" ", "%20");
+                        data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                        response.send(data);
+                      });
+                    });
+                  } else {
+                    response.send(data);
+                  }
                 }
               }).catch(error => console.log(error))
             });
@@ -461,7 +545,21 @@ exports.getMekong = functions.https.onRequest((request, response) => {
                 var image_file = file.file.replace(" ", "%20");
                 data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
-                  response.send(data);
+                  if (data.menu && data.menuSpanish) {
+                    app.storage.getFile(data.menu[0])
+                    .then(function(file){
+                      var menu = file.file.replace(" ", "%20");
+                      data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                      app.storage.getFile(data.menuSpanish[0])
+                      .then(function(file){
+                        var menuSpanish = file.file.replace(" ", "%20");
+                        data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                        response.send(data);
+                      });
+                    });
+                  } else {
+                    response.send(data);
+                  }
                 }
               }).catch(error => console.log(error))
             });
@@ -489,7 +587,21 @@ exports.getApache = functions.https.onRequest((request, response) => {
               var image_file = file.file.replace(" ", "%20");
               data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
               if (index === data.gallery.length-1) {
-                response.send(data);
+                if (data.menu && data.menuSpanish) {
+                  app.storage.getFile(data.menu[0])
+                  .then(function(file){
+                    var menu = file.file.replace(" ", "%20");
+                    data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                    app.storage.getFile(data.menuSpanish[0])
+                    .then(function(file){
+                      var menuSpanish = file.file.replace(" ", "%20");
+                      data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                      response.send(data);
+                    });
+                  });
+                } else {
+                  response.send(data);
+                }
               }
             }).catch(error => console.log(error))
           });
@@ -559,16 +671,30 @@ exports.getEventsBogota = functions.https.onRequest((request, response) => {
               data.image = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media';
               if (data.culturalAgenda.length > 0) {
                 data.culturalAgenda.forEach((event, index) => {
-                  event.gallery.forEach(element => {
+                  event.gallery.forEach((element, index_2) => {
                     app.storage.getFile(element)
                     .then(function(file){
                       var image_file = file.file.replace(" ", "%20");
-                      event.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                      event.gallery[index_2] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                      if(index === data.culturalAgenda.length - 1 && index_2 === event.gallery.length - 1){
+                        if (data.eventsBrochureEnglish && data.eventsBrochureSpanish) {
+                          app.storage.getFile(data.eventsBrochureEnglish[0])
+                          .then(function(file){
+                            var eventsBrochureEnglish = file.file.replace(" ", "%20");
+                            data.eventsBrochureEnglish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+eventsBrochureEnglish+'?alt=media';
+                            app.storage.getFile(data.eventsBrochureSpanish[0])
+                            .then(function(file){
+                              var eventsBrochureSpanish = file.file.replace(" ", "%20");
+                              data.eventsBrochureSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+eventsBrochureSpanish+'?alt=media';
+                              response.send(data);
+                            });
+                          });
+                        } else {
+                          response.send(data);
+                        }
+                      }
                     }).catch(error => console.log(error))
                   });
-                  if (index === data.culturalAgenda.length-1) {
-                    response.send(data);
-                  }
                 });
               } else {
                 response.send(data);
@@ -617,7 +743,21 @@ exports.getEventsMedellin = functions.https.onRequest((request, response) => {
                           var image_file = file.file.replace(" ", "%20");
                           event.gallery[axios] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                           if(index === data.culturalAgenda.length - 1 && axios === event.gallery.length - 1){
-                            response.send(data);
+                            if (data.eventsBrochureEnglish && data.eventsBrochureSpanish) {
+                              app.storage.getFile(data.eventsBrochureEnglish[0])
+                              .then(function(file){
+                                var eventsBrochureEnglish = file.file.replace(" ", "%20");
+                                data.eventsBrochureEnglish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+eventsBrochureEnglish+'?alt=media';
+                                app.storage.getFile(data.eventsBrochureSpanish[0])
+                                .then(function(file){
+                                  var eventsBrochureSpanish = file.file.replace(" ", "%20");
+                                  data.eventsBrochureSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+eventsBrochureSpanish+'?alt=media';
+                                  response.send(data);
+                                });
+                              });
+                            } else {
+                              response.send(data);
+                            }
                           }
                         }).catch(error => console.log(error))
                       });
@@ -976,7 +1116,21 @@ exports.getAboutBogota = functions.https.onRequest((request, response) => {
               .then(function(file){
                 data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
                 if (index === data.gallery.length-1) {
-                  response.send(data);
+                  if (data.pressKit && data.pressKitSpanish) {
+                    app.storage.getFile(data.pressKit[0])
+                    .then(function(file){
+                      var press_kit = file.file.replace(" ", "%20");
+                      data.pressKit = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+press_kit+'?alt=media';
+                      app.storage.getFile(data.pressKitSpanish[0])
+                      .then(function(file){
+                        var press_kit_es = file.file.replace(" ", "%20");
+                        data.pressKitSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+press_kit_es+'?alt=media';
+                        response.send(data);
+                      });
+                    });
+                  } else {
+                    response.send(data);
+                  }
                 }
               }).catch(error => console.log(error))
             });

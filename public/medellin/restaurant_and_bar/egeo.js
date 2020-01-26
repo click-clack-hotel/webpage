@@ -11,15 +11,14 @@ app.controller('egeo', function($scope, $http) {
     return response;
   });
   request_2.then(function (data) {
-      console.log(data.data);
-      
     $scope.text_egeo_med = data.data.textEnglish;
     $scope.text_egeo_med_es = data.data.textSpanish;
     $scope.text_info_egeo_med = data.data.smallTextEnglish;
     $scope.text_info_egeo_med_es = data.data.smallTextSpanish;
     $scope.carousel_egeo_med = data.data.gallery;
     $scope.img_egeo = data.data.background.link;
-    
+    $scope.menu = data.data.menu;
+    $scope.menu_es = data.data.menuSpanish;
   });
 
   var request = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getBigBaos")

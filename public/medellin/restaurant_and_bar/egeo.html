@@ -301,10 +301,13 @@
                                         <p ng-if="spanish" class="text-justify text-500 text-click">{{text_egeo_med_es}}</p>
                                         <p ng-if="english" class="text-justify text-light text-click"><small>{{text_info_egeo_med}}</small></p>
                                         <p ng-if="spanish" class="text-justify text-light text-click"><small>{{text_info_egeo_med_es}}</small></p>
+                                        <div class="text-center">
+                                          <a ng-if="english && menu && menu.length !== 1" href={{menu}} target="_blank" class="btn btn-outline-secondary px-6">MENU</a>
+                                          <a ng-if="spanish && menu_es && menu_es.length !== 1" href={{menu_es}} target="_blank" class="btn btn-outline-secondary px-6">MENÚ</a>
+                                        </div>
                                         <!-- <div class="text-center">
                                           <a ng-if="english" href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">BOOK</a>
                                           <a ng-if="spanish" href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">RESERVAR</a>
-
                                         </div> -->
                                     </div>
 

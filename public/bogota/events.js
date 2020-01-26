@@ -8,17 +8,21 @@ app.controller('events', function($scope, $http) {
     return response;
   });
   request.then(function (data) {
-    console.log(data.data);
-    
     $scope.img_events = data.data.image
     $scope.text_events_bogota = data.data.textEnglish
     $scope.text_events_bogota_es = data.data.textSpanish
     $scope.text_concrete = data.data.concretePark.textEnglish
     $scope.text_concrete_es = data.data.concretePark.textSpanish
     $scope.img_concrete = data.data.concretePark.image
-    $scope.text_meetings = data.data.meetingsRoom.English
+    $scope.text_meetings = data.data.meetingsRoom.textEnglish
     $scope.text_meetings_es = data.data.meetingsRoom.textSpanish
     $scope.img_meetings = data.data.meetingsRoom.image
+    $scope.smallTextEnglish = data.data.smallTextEnglish
+    $scope.smallTextSpanish = data.data.smallTextSpanish
+    $scope.culturalAgenda = data.data.culturalAgenda
+    
+    $scope.eventsBrochureEnglish = data.data.eventsBrochureEnglish
+    $scope.eventsBrochureSpanish = data.data.eventsBrochureSpanish
   
     $scope.brunchaholic_title = 'BRUNCHAHOLIC'
     $scope.brunchaholic_text = "A favourite with locals, our legendary Bogota Brunchaholic is a weekend regular. And we take the term ‘all-you-can-eat ‘ very seriously. With food stations ranging from classic Colombian fare to build-your-own pancakes to pastries to barbecue and more, you’ll barely have room for the bottomless mimosas and whiskey sours. All to the backdrop of tropical house beats from live DJs. From 12pm to 5pm, Saturdays and Sundays."

@@ -275,7 +275,6 @@
                       </div>
                     </div>
                       <div class="col-md-6 py-6 py-lg-8 bg-primary  overflow-hidden">
-
                           <div class="row justify-content-center ">
                               <div class="col-md-9 ">
                                 <div class="row justify-content-center  text-justify">
@@ -284,11 +283,17 @@
                                           <h3 class="my-0 fs-1 fw-medium text-secondary text-uppercase">About us</h3>
                                           <h2 class="mb-4 fw-medium text-white text-uppercase">CLICK CLACK</h2>
                                           <p class="text-500 text-click">{{text}}</p>
+                                          <div style="text-align: center !important;">
+                                            <a ng-if="press_kit && press_kit.length !== 1" href={{press_kit}} target="_blank" class="btn btn-outline-light px-6">PRESS KIT</a>
+                                          </div>
                                       </div>
                                       <div ng-if="spanish" class="col-md-12 ">
                                         <h3 class="my-0 fs-1 fw-medium text-secondary text-uppercase">Acerca de nosotros</h3>
                                         <h2 class="mb-4 fw-medium text-white text-uppercase">CLICK CLACK</h2>
                                         <p class="text-500 text-click">{{text_es}}</p>
+                                        <div style="text-align: center !important;">
+                                          <a ng-if="press_kit_es && press_kit_es.length !== 1" href={{press_kit_es}} target="_blank" class="btn btn-outline-light px-6">PRESS KIT</a>
+                                        </div>
                                     </div>
                                   </div>
                                 </div>

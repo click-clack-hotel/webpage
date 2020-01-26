@@ -267,8 +267,7 @@
               </div>
             </div>
             <div class="col-md-6 py-6 py-lg-8 bg-primary  overflow-hidden">
-              <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
+              <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog " role="document">
                   <div class="modal-content bg-primary">
                     <div class="modal-header text-center">
@@ -279,92 +278,70 @@
                       </button>
                     </div>
                     <form>
-                      <div class="modal-body mx-3">
-                        <div class="md-form mb-3">
-                          <input ng-if="english" type="text" id="name" class="form-c form-control-sm validate"
-                            ng-model='name' placeholder="Full name">
-                          <input ng-if="spanish" type="text" id="name" class="form-c form-control-sm validate"
-                            ng-model='name' placeholder="Nombre completo">
-                        </div>
-                        <div class="md-form mb-3">
-                          <input ng-if="english" type="number" id="persons" class="form-c form-control-sm validate"
-                            ng-model='phone' placeholder="Phone number">
-                          <input ng-if="spanish" type="number" id="persons" class="form-c form-control-sm validate"
-                            ng-model='phone' placeholder="Telefono">
-                        </div>
-                        <div class="md-form mb-3">
-                          <input ng-if="english" type="email" id="email" class="form-c form-control-sm validate"
-                            ng-model='clientMail' placeholder="Email">
-                          <input ng-if="spanish" type="email" id="email" class="form-c form-control-sm validate"
-                            ng-model='clientMail' placeholder="Correo electrónico">
-                        </div>
-                        <div class="md-form mb-3">
-                          <input ng-if="english" type="number" min="1" id="persons"
-                            class="form-c form-control-sm validate" ng-model='numberPersons'
-                            placeholder="Number of persons">
-                          <input ng-if="spanish" type="number" min="1" id="persons"
-                            class="form-c form-control-sm validate" ng-model='numberPersons'
-                            placeholder="Numero de personas">
-                        </div>
-                        <div class="form-group">
-                          <select ng-if="english" class="form-c" ng-model='space' id="exampleFormControlSelect1">
-                            <option>Space ...</option>
-                            <option>REDROOM</option>
-                            <option>4XL room</option>
-                            <option>Meetings Room</option>
-                            <option>Click Clack Park</option>
-                          </select>
-                          <select ng-if="spanish" class="form-c" ng-model='space' id="exampleFormControlSelect1">
+                    <div class="modal-body mx-3">
+                      <div class="md-form mb-3">
+                        <input ng-if="english" type="text" id="name" class="form-c form-control-sm validate" ng-model='name' placeholder="Full name">
+                        <input ng-if="spanish" type="text" id="name" class="form-c form-control-sm validate" ng-model='name' placeholder="Nombre completo">
+                      </div>
+                      <div class="md-form mb-3">
+                        <input ng-if="english" type="number" id="persons" class="form-c form-control-sm validate" ng-model='phone' placeholder="Phone number">
+                        <input ng-if="spanish" type="number" id="persons" class="form-c form-control-sm validate" ng-model='phone' placeholder="Telefono">
+                      </div>
+                      <div class="md-form mb-3">
+                        <input ng-if="english" type="email" id="email" class="form-c form-control-sm validate" ng-model='clientMail' placeholder="Email">
+                        <input ng-if="spanish" type="email" id="email" class="form-c form-control-sm validate" ng-model='clientMail' placeholder="Correo electrónico">
+                      </div>
+                      <div class="md-form mb-3">
+                        <input ng-if="english" type="number" min="1" id="persons" class="form-c form-control-sm validate" ng-model='numberPersons' placeholder="Number of persons">
+                        <input ng-if="spanish" type="number" min="1" id="persons" class="form-c form-control-sm validate" ng-model='numberPersons' placeholder="Numero de personas">
+                      </div>
+                      <div class="form-group">
+                        <select ng-if="english" class="form-c" ng-model='space' id="exampleFormControlSelect1">
+                          <option>Space ...</option>
+                          <option>REDROOM</option>
+                          <option>4XL Room</option>
+                          <option>Sala de juntas</option>
+                          <option>Click Clack Park</option>
+                          <option>Not sure</option>
+                        </select>
+                        <select ng-if="spanish" class="form-c" ng-model='space' id="exampleFormControlSelect1">
                             <option>Espacio ...</option>
                             <option>REDROOM</option>
-                            <option>4XL room</option>
-                            <option>Sala de Juntas</option>
+                            <option>4XL Room</option>
+                            <option>Meetings Room</option>
                             <option>Click Clack Park</option>
+                            <option>No estoy seguro</option>
                           </select>
-                        </div>
-                        <div class="md-form mb-3">
-                          <input type="date" id="date" class="form-c form-control-sm validate" ng-model='date'
-                            value="{{today}}">
-                        </div>
-                        <div class="md-form mb-3 text-center">
-                          <input ng-if="english" type="time" min="07:00" max="21:00" value="07:00" step="600" id="hour"
-                            ng-model='hour' class="form-c form-control-sm validate" placeholder="Hour">
-                          <input ng-if="english" type="time" min="07:00" max="21:00" value="07:00" step="600" id="hour"
-                            ng-model='hour' class="form-c form-control-sm validate" placeholder="Hora">
-                        </div>
-                        <div class="form-group">
-                          <label ng-if="english" class="text-white" for="exampleFormControlTextarea1"
-                            style="font-size:14px">Additional information</label>
-                          <label ng-if="english" class="text-white" for="exampleFormControlTextarea1"
-                            style="font-size:14px">Información adicional</label>
-                          <textarea class="form-c " id="exampleFormControlTextarea1" ng-model='message'
-                            rows="3"></textarea>
-                        </div>
                       </div>
+                      <div class="md-form mb-3">
+                        <input type="date" id="date" class="form-c form-control-sm validate" ng-model='date' value="{{today}}">
+                      </div>
+                      <div class="md-form mb-3 text-center">
+                        <input ng-if="english" type="time" min="07:00" max="21:00" value="07:00" step="600" id="hour" ng-model='hour'  class="form-c form-control-sm validate" placeholder="Hour">
+                        <input ng-if="spanish" type="time" min="07:00" max="21:00" value="07:00" step="600" id="hour" ng-model='hour'  class="form-c form-control-sm validate" placeholder="Hora">
+                      </div>
+                      <div class="form-group">
+                        <label ng-if="english" class="text-white" for="exampleFormControlTextarea1" style="font-size:14px">Additional information</label>
+                        <label ng-if="spanish" class="text-white" for="exampleFormControlTextarea1" style="font-size:14px">Información adicional</label>
+                        <textarea class="form-c " id="exampleFormControlTextarea1" ng-model='message' rows="3"></textarea>
+                      </div>
+                    </div>
 
-                      <div class="modal-footer bg-primary d-flex justify-content-center">
-                        <div class="form-check text-center" style="font-size:10px">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          <label ng-if="english" class="form-check-label text-white" for="exampleCheck1">Accept <a
-                              class="text-secondary" target="_blank" href={{terms}}><strong>terms and
-                                conditions</strong></a> </label>
-                          <label ng-if="spanish" class="form-check-label text-white" for="exampleCheck1">Acepto <a
-                              class="text-secondary" target="_blank" href={{terms}}><strong>terminos y
-                                condiciones</strong></a> </label>
-                          <br><br>
-                          <input ng-if="english" class="btn btn-sm btn-outline-light btn-block" data-toggle="modal"
-                            data-target="#confirm" ng-click="sendMail()" data-dismiss="modal" type="submit"
-                            value="Send">
-                          <input ng-if="spanish" class="btn btn-sm btn-outline-light btn-block" data-toggle="modal"
-                            data-target="#confirm" ng-click="sendMail()" data-dismiss="modal" type="submit"
-                            value="Enviar">
-                        </div>
+                    <div class="modal-footer bg-primary d-flex justify-content-center">
+                      <div class="form-check text-center" style="font-size:10px">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label ng-if="english" class="form-check-label text-white" for="exampleCheck1" >Accept <a class="text-secondary" target="_blank" href={{terms}} ><strong>terms and conditions</strong></a> </label>
+                        <label ng-if="spanish" class="form-check-label text-white" for="exampleCheck1" >Acepto <a class="text-secondary" target="_blank" href={{terms}}><strong>terminos y condiciones</strong></a> </label>
                         <br><br>
+                        <input ng-if="english" class="btn btn-sm btn-outline-light btn-block" data-toggle="modal" data-target="#confirm" ng-click="sendMail()" data-dismiss="modal" type="submit" value="Send">
+                        <input ng-if="spanish" class="btn btn-sm btn-outline-light btn-block" data-toggle="modal" data-target="#confirm" ng-click="sendMail()" data-dismiss="modal" type="submit" value="Enviar">
+                      </div>
+                      <br><br>
                     </form>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
               aria-hidden="true">
               <div class="modal-dialog " role="document">
@@ -393,6 +370,7 @@
                       <p class="text-500 text-click">{{text_events_bogota}}</p>
                       <p class="text-white f--2 text-center">{{smallText_events_bogota}}</p>
                       <div class="text-center">
+                        <a ng-if="eventsBrochureEnglish && eventsBrochureEnglish.length !== 1" href={{eventsBrochureEnglish}} target="_blank" class="btn btn-outline-secondary px-5" style="margin-right: 10px;">EVENTS BROCHURE</a>
                         <a href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">BOOK</a>
                       </div>
                     </div>
@@ -402,6 +380,7 @@
                       <p class="text-500 text-click">{{text_events_bogota_es}}</p>
                       <p class="text-white f--2 text-center">{{smallText_events_bogota_es}}</p>
                       <div class="text-center">
+                        <a ng-if="eventsBrochureSpanish && eventsBrochureSpanish.length !== 1" href={{eventsBrochureSpanish}} target="_blank" class="btn btn-outline-secondary px-5" style="margin-right: 10px;">BROCHURE DE EVENTOS</a>
                         <a href="" class="btn btn-outline-light" data-toggle="modal" data-target="#booking">RESERVAR</a>
                       </div>
                     </div>

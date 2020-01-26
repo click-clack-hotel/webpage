@@ -25,6 +25,8 @@ app.controller('ciengramos', function($scope, $http) {
       $scope.text_info_ciengramos_bog = data.data.smallTextEnglish;
       $scope.text_info_ciengramos_bog_es = data.data.smallTextSpanish;
       $scope.carousel_ciengramos_bog = data.data.gallery;
+      $scope.menu = data.data.menu;
+      $scope.menu_es = data.data.menuSpanish;
     });
   });
 

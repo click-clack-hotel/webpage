@@ -36,6 +36,8 @@ app.controller('big_baos', function($scope, $http) {
   request.then(function (data) {
     $scope.img_xs = data.data.background.link;
     $scope.name_xs = 'BIG BAOS'
+    $scope.menu = data.data.menu;
+    $scope.menu_es = data.data.menuSpanish;
   });
 
   var request2 = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getClickClackKitchen")
