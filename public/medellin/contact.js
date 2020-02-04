@@ -68,8 +68,8 @@ app.controller('contact', function($scope, $http) {
       id: 'restaurant_and_bar',
       visible: true,
       route: './restaurant_and_bar.html',
-      name: 'Restaurant and bar',
-      nombre: 'Restaurante y bar'
+      name: 'Restaurants and bars',
+      nombre: 'Restaurantes y bares'
     },
     {
       id: 'la_cometa',

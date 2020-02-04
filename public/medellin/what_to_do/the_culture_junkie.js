@@ -101,8 +101,8 @@ app.controller('the_culture_junkie', function($scope, $http) {
       id: 'restaurant_and_bar',
       visible: false,
       route: './restaurant_and_bar.html',
-      name: 'Restaurant and bar',
-      nombre: 'Restaurante y bar'
+      name: 'Restaurants and bars',
+      nombre: 'Restaurantes y bares'
     },
     {
       id: 'events',

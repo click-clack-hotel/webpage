@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Page Title -->
-    <title>Medellín | Egeo</title>
+    <title>Medellín | la_deriva</title>
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F1553641315663_favicon.png?alt=media&token=ee05ece6-7242-44cc-8d76-f223a95c3d65" type="image/x-icon">
@@ -29,12 +29,12 @@
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!-- Controller -->
-    <script src="./egeo.js"></script>
+    <script src="./la_deriva.js"></script>
   </head>
 
   <body class="bg-primary">
     
-    <div ng-app="app" ng-controller="egeo">
+    <div ng-app="app" ng-controller="la_deriva">
 
       <!-- Preloader -->
       <div class="preloader">
@@ -236,11 +236,11 @@
           <!-- Section -->
 
           <section class="py-0 overflow-hidden text-center">
-              <div ng-if="img_egeo" class="bg-container overlay varlay-dark-50 parallax" data-rellax-percentage="0.5"  ng-style="{'background-image':'url({{img_egeo}})'}"></div>
+              <div ng-if="img_la_deriva" class="bg-container overlay varlay-dark-50 parallax" data-rellax-percentage="0.5"  ng-style="{'background-image':'url({{img_la_deriva}})'}"></div>
               <div class="container">
                   <div class="row h-100vh align-items-center">
                       <div class="col">
-                         <h1 class="text-white text-uppercase fs-4 fs-lg-6" >egeo</h1>
+                         <h1 class="text-white text-uppercase fs-4 fs-lg-6" >LA DERIVA</h1>
                       </div>
                   </div>
               </div>
@@ -250,8 +250,8 @@
                   </a>
               </div>
               <div class="slides-navigation">
-                <a class="prev" href="./click_clack_kitchen.html"><i class="fas fa-chevron-left"></i></a>
-                <a class="next" href="./mekong.html"><i class="fas fa-chevron-right"></i></a>
+                <a class="prev" href="./mekong.html"><i class="fas fa-chevron-left"></i></a>
+                <a class="next" href="./big_baos.html"><i class="fas fa-chevron-right"></i></a>
               </div>
           </section>
           <!-- End of Section -->
@@ -271,7 +271,7 @@
 
                       <div id="carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                          <div ng-repeat="i in carousel_egeo_med" ng-class="{active:!$index}" class="carousel-item">
+                          <div ng-repeat="i in carousel_la_deriva_med" ng-class="{active:!$index}" class="carousel-item">
                             <img class="d-block w-100" src="{{ i.link }}" alt="First slide">
                           </div>
                         </div>
@@ -295,12 +295,12 @@
                                 <div class="row container">
                                     <div class="col-md-12 ">
                                         <br>
-                                        <h3 class="my-0 fs-1 fw-medium text-secondary text-uppercase">{{title_egeo}}</h3>
-                                        <h2 class="mb-4 fw-medium text-white text-uppercase">{{subtitle_egeo}}</h2>
-                                        <p ng-if="english" class="text-justify text-500 text-click">{{text_egeo_med}}</p>
-                                        <p ng-if="spanish" class="text-justify text-500 text-click">{{text_egeo_med_es}}</p>
-                                        <p ng-if="english" class="text-justify text-light text-click"><small>{{text_info_egeo_med}}</small></p>
-                                        <p ng-if="spanish" class="text-justify text-light text-click"><small>{{text_info_egeo_med_es}}</small></p>
+                                        <h3 class="my-0 fs-1 fw-medium text-secondary text-uppercase">{{title_la_deriva}}</h3>
+                                        <h2 class="mb-4 fw-medium text-white text-uppercase">{{subtitle_la_deriva}}</h2>
+                                        <p ng-if="english" class="text-justify text-500 text-click">{{text_la_deriva_med}}</p>
+                                        <p ng-if="spanish" class="text-justify text-500 text-click">{{text_la_deriva_med_es}}</p>
+                                        <p ng-if="english" class="text-justify text-light text-click"><small>{{text_info_la_deriva_med}}</small></p>
+                                        <p ng-if="spanish" class="text-justify text-light text-click"><small>{{text_info_la_deriva_med_es}}</small></p>
                                         <div class="text-center">
                                           <a ng-if="english && menu && menu.length !== 1" href={{menu}} target="_blank" class="btn btn-outline-secondary px-6">MENU</a>
                                           <a ng-if="spanish && menu_es && menu_es.length !== 1" href={{menu_es}} target="_blank" class="btn btn-outline-secondary px-6">MENÚ</a>
@@ -319,8 +319,8 @@
                                   <div class="modal-dialog " role="document">
                                     <div class="modal-content bg-primary">
                                       <div class="modal-header text-center">
-                                        <h4 ng-if="english" class="modal-title text-secondary w-100">egeo BOOKING</h4>
-                                        <h4 ng-if="spanish" class="modal-title text-secondary w-100">RESERVAS egeo</h4>
+                                        <h4 ng-if="english" class="modal-title text-secondary w-100">la_deriva BOOKING</h4>
+                                        <h4 ng-if="spanish" class="modal-title text-secondary w-100">RESERVAS la_deriva</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
                                           <span aria-hidden="true">&times;</span>
                                         </button>
@@ -378,7 +378,7 @@
                                   <div class="modal-dialog " role="document">
                                     <div class="modal-content bg-primary">
                                       <div class="modal-header text-center">
-                                        <h4 ng-if="english" class="modal-title text-secondary w-100">egeo BOOKING</h4>
+                                        <h4 ng-if="english" class="modal-title text-secondary w-100">la_deriva BOOKING</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
                                           <span aria-hidden="true">&times;</span>
                                         </button>
@@ -431,13 +431,13 @@
                           </div>
                       </div>
                       <div class="col-md-3 py-0">
-                          <div class="bg-container overlay overlay-dark-50" style='background-image: url("{{img_l}}")'></div>
+                          <div class="bg-container overlay overlay-dark-50" style='background-image: url("{{img_m}}")'></div>
                           <div class="row justify-content-center py-6 py-lg-8">
                               <div class="col-md-9">
                                 <div class="row justify-content-center text-justify">
                                   <div class="row">
                                       <div class="col-md-12 text-center">
-                                          <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./mekong.html">{{name_l}}</a>
+                                          <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./egeo.html">{{name_m}}</a>
                                       </div>
                                   </div>
                                 </div>
@@ -445,13 +445,13 @@
                           </div>
                       </div>
                       <div class="col-md-3 py-0">
-                          <div class="bg-container overlay overlay-dark-50" style='background-image: url("{{img_xl}}")'></div>
+                          <div class="bg-container overlay overlay-dark-50" style='background-image: url("{{img_l}}")'></div>
                           <div class="row justify-content-center py-6 py-lg-8">
                               <div class="col-md-9">
                                 <div class="row justify-content-center text-justify">
                                   <div class="row">
                                       <div class="col-md-12 text-center">
-                                          <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./la_deriva.html">{{name_xl}}</a>
+                                          <a class="btn btn-lg btn-outline-light my-2 my-sm-2" href="./mekong.html">{{name_l}}</a>
                                       </div>
                                   </div>
                                 </div>

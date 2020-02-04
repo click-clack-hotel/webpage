@@ -38,6 +38,15 @@ app.controller('restaurant_and_bar', function($scope, $http) {
     $scope.img_l = data.data.background.link;
   });
 
+  var request5 = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getLaDeriva")
+  .then(function(response) {
+    $scope.data = response;
+    return response;
+  });
+  request5.then(function (data) {
+    $scope.img_xl = data.data.background.link;
+  });
+
   // Language
   if (window.localStorage) {
     if (!localStorage.getItem('clickClackLanguage')) {
@@ -106,8 +115,8 @@ app.controller('restaurant_and_bar', function($scope, $http) {
       id: 'restaurant_and_bar',
       visible: true,
       route: './restaurant_and_bar.html',
-      name: 'Restaurant and bar',
-      nombre: 'Restaurante y bar'
+      name: 'Restaurants and bars',
+      nombre: 'Restaurantes y bares'
     },
     {
         id: 'la_cometa',

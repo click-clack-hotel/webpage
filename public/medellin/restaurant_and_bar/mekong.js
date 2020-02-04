@@ -61,7 +61,15 @@ app.controller('mekong', function($scope, $http) {
     $scope.name_l = 'MEKONG'
   });
 
-
+  var request5 = $http.get("https://us-central1-click-clack-5db9f.cloudfunctions.net/getLaDeriva")
+  .then(function(response) {
+    $scope.data = response;
+    return response;
+  });
+  request5.then(function (data) {
+    $scope.img_xl = data.data.background.link;
+    $scope.name_xl = 'LA DERIVA'
+  });
 
   // Language
   if (window.localStorage) {
@@ -131,8 +139,8 @@ app.controller('mekong', function($scope, $http) {
       id: 'restaurant_and_bar',
       visible: true,
       route: '../restaurant_and_bar.html',
-      name: 'Restaurant and bar',
-      nombre: 'Restaurante y bar'
+      name: 'Restaurants and bars',
+      nombre: 'Restaurantes y bares'
     },
     {
         id: 'la_cometa',

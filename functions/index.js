@@ -572,6 +572,52 @@ exports.getMekong = functions.https.onRequest((request, response) => {
   })
 });
 
+exports.getLaDeriva = functions.https.onRequest((request, response) => {
+  cors(request,response,()=>{
+    response.setHeader('X-Frame-Options', 'ALLOWALL');
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    app.content.get('laDeriva')
+    .then(function(data){
+      if (data.gallery.length > 0 && data.background.length > 0) {
+          app.storage.getFile(data.background[0])
+          .then(function(file){
+            var image_file = file.file.replace(" ", "%20");
+            data.background = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+            data.gallery.forEach((element, index) => {
+              app.storage.getFile(element)
+              .then(function(file){
+                var image_file = file.file.replace(" ", "%20");
+                data.gallery[index] = {link: 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+image_file+'?alt=media'};
+                if (index === data.gallery.length-1) {
+                  if (data.menu && data.menuSpanish) {
+                    app.storage.getFile(data.menu[0])
+                    .then(function(file){
+                      var menu = file.file.replace(" ", "%20");
+                      data.menu = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menu+'?alt=media';
+                      app.storage.getFile(data.menuSpanish[0])
+                      .then(function(file){
+                        var menuSpanish = file.file.replace(" ", "%20");
+                        data.menuSpanish = 'https://firebasestorage.googleapis.com/v0/b/click-clack-5db9f.appspot.com/o/flamelink%2Fmedia%2F'+menuSpanish+'?alt=media';
+                        response.send(data);
+                      });
+                    });
+                  } else {
+                    response.send(data);
+                  }
+                }
+              }).catch(error => console.log(error))
+            });
+          });
+      } else {
+        response.send(data);
+      }
+    })
+    .catch(error => console.log(error))
+  })
+});
+
 exports.getApache = functions.https.onRequest((request, response) => {
   cors(request,response,()=>{
     response.setHeader('X-Frame-Options', 'ALLOWALL');
