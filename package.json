@@ -56,7 +56,7 @@
     "firebase-tools": "^6.2.2",
     "flamelink": "^0.19.6",
     "js-beautify": "^1.6.14",
-    "nodemailer": "^4.7.0",
+    "nodemailer": "^6.4.16",
     "path": "^0.12.7"
   }
 }
